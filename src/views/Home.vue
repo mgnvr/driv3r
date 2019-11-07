@@ -281,7 +281,7 @@ export default {
       games: [],
       isOpened: false,
       isSwitched: false,
-      isEmpty: false,
+      // isEmpty: false,
       genre: 'все',
       isChild: false
     }
@@ -335,6 +335,9 @@ export default {
     },
     showLikedGames () {
       return this.$store.getters.wishlist(this.search)
+    },
+    isEmpty() {
+      return !this.$store.state.wishlistIds.length;
     }
   }
 }
