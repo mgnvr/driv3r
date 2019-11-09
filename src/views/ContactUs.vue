@@ -49,7 +49,7 @@
 
       <h1 class="about-header">Забронируйте место</h1>
 
-      <form action="https://send.pageclip.co/15aM5PlDtw71Dc6mPeLGw0SuDRDWXyQj" method="post" class="form-reserve pageclip-form" autocomplete="off">
+      <form action="https://send.pageclip.co/YR97n0GUKhRoDRB8QgxgjFgUXX86SOa5" method="post" class="form-reserve pageclip-form" autocomplete="off">
           <input type="text" name="Имя" value="" placeholder="Имя" class="input-reserve" title="" required>
           <input type="tel" class="input-reserve" id="tel" name="Телефон" placeholder="Телефон в формате 8-(XXX)-XXX-XX-XX"  title=""  required>
           <div class="datetime-reserve">
@@ -120,8 +120,8 @@ export default {
     let showhideDate = document.getElementById('date');
     let patternMaskDate = new IMask(showhideDate, {
       mask: '00.00.0000',
-      lazy: true,
-      placeholderChar: '_'
+      lazy: true,  // make placeholder always visible
+      placeholderChar: '_'     // defaults to '_'
     });
     showhideDate.addEventListener('focus', function() {
       patternMaskDate.updateOptions({ lazy: false });
@@ -136,8 +136,8 @@ export default {
     let showhideTime = document.getElementById('time');
     let patternMaskTime = new IMask(showhideTime, {
       mask: '00:00',
-      lazy: true,
-      placeholderChar: '_'
+      lazy: true,  // make placeholder always visible
+      placeholderChar: '_'     // defaults to '_'
     });
     showhideTime.addEventListener('focus', function() {
       patternMaskTime.updateOptions({ lazy: false });
@@ -153,7 +153,7 @@ export default {
 Pageclip.form(form, {
   onSubmit: function (event) { },
   onResponse: function (error, response) { },
-  successTemplate: "<span>Спасибо, заявка успешно отправлена</span><a class='back-home' href='https://mgnvr.github.io/driv3r'>Вернуться на главную</a>"
+  successTemplate: "<span>Спасибо, заявка успешно отправлена</span><a class='back-home' href='https://mgnvr.github.io/driv3r/#/'>Вернуться на главную</a>"
 })
   }
 }
