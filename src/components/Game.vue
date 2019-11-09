@@ -34,7 +34,7 @@
       </div>
 
       <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
-        
+
       </div>
 
       </div>
@@ -128,15 +128,15 @@ export default {
   },
   created: function () {
     this.game = this.$store.state.games.find(game => {
-      return game.id == this.$route.params.id 
+      return game.id == this.$route.params.id
     })
     // this.game.image = '/' + this.game.image
 
-  //   this.$store.state.articles.find(article => {
+    //   this.$store.state.articles.find(article => {
 
-  //   return article.id == this.$route.params.id
+    //   return article.id == this.$route.params.id
 
-  // });
+    // });
 
     // this.axios.get(this.publicPath + 'games.json').then(response => {
     //   this.game = response.data.games.filter(data => data.id == this.$route.params.id)[0]

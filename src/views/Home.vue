@@ -34,13 +34,12 @@
       </div>
 
       <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
-        
+
       </div>
 
       </div>
     </div>
 
-    
       <div class="search">
         <div class="container container-search">
           <div></div>
@@ -60,7 +59,6 @@
           <button @click="showInput()" :class="buttonInput" ref="buttonGame" class="toggle-search"></button>
         </div>
       </div>
-
 
     <section>
       <back-to-top visibleoffset="500">
@@ -268,7 +266,6 @@
   </div>
 </template>
 
-
 <script>
 export default {
   name: 'home',
@@ -336,8 +333,8 @@ export default {
     showLikedGames () {
       return this.$store.getters.wishlist(this.search)
     },
-    isEmpty() {
-      return !this.$store.state.wishlistIds.length;
+    isEmpty () {
+      return !this.$store.state.wishlistIds.length
     }
   }
 }

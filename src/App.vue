@@ -24,7 +24,7 @@ body::after {
     url("/driv3r/close.svg")
     url("/driv3r/star.svg")
     url("/driv3r/star_fill.svg")
-    url("/driv3r/vk.svg"); 
+    url("/driv3r/vk.svg");
   display: none;
 }
 
@@ -90,6 +90,27 @@ a {
   text-decoration: none;
   color: black;
   font-size: 20px;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #89253e;
+  transition: .3s linear;
+  background-image: url("/driv3r/home.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.back-home:hover {
+  background: #6e1e32;
+  background-image: url("/driv3r/home.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  transition: .3s linear;
 }
 
 p {
@@ -167,22 +188,6 @@ p {
   height: 50px;
   /* left: 0;
   top: 0; */
-}
-
-::-webkit-input-placeholder {
-  color: #fff;
-}
-
-::-moz-placeholder {
-  color: #fff;
-}
-
-:-moz-placeholder {
-  color: #fff;
-}
-
-:-ms-input-placeholder {
-  color: #fff;
 }
 
 input:focus {
@@ -522,12 +527,14 @@ a:hover,
 }
 
 .container-game,
-.container-about {
+.container-about,
+.container-contactus {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.container.container-about {
+.container.container-about,
+.container.container-contactus {
   margin-bottom: 20px;
 }
 
@@ -686,7 +693,8 @@ a:hover,
 
 @media (min-width: 501px) {
   .container-game,
-  .container-about {
+  .container-about,
+  .container-contactus {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -890,6 +898,84 @@ label[for=isChild] {
   background: rgba(0, 0, 0, 0.8);
 }
 
+.form-reserve {
+  max-width: 500px;
+}
+
+.input-reserve {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #ffffff;
+  border: 3px solid #89253e;
+  background-color: transparent;
+  transition: all .3s linear;
+}
+
+.input-reserve:focus {
+  outline: none;
+  background-color: #1a0628;
+  transition: all .3s linear;
+}
+
+.input-reserve:hover {
+  background-color: #1a0628;
+  transition: all .3s linear;
+}
+
+.input-reserve::-webkit-input-placeholder {
+    color: #666 !important;
+}
+.input-reserve:-moz-placeholder {
+    /* FF 4-18 */
+    color: #666;
+}
+.input-reserve::-moz-placeholder {
+    /* FF 19+ */
+    color: #666;
+}
+.input-reserve:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #666;
+}
+
+.textarea-reserve {
+  resize: none;
+}
+
+.button-reserve {
+  padding: 15px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+/*  border: 3px solid #89253e;*/
+  background: #89253e;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.button-reserve:hover {
+  background: #6e1e32;
+  transition: all .3s linear;
+}
+
+.button-reserve:focus {
+  outline: none;
+}
+
+.datetime-reserve {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.datetime-reserve .input-reserve {
+  width: 49%;
+  display: inline-block;
+}
+
 @-webkit-keyframes tabs-ripple {
   0% {
     background: transparent;
@@ -986,6 +1072,10 @@ label[for=isChild] {
   .container {
     max-width: 960px;
     margin: 0 auto;
+  }
+
+  .container-contactus {
+    width: 100%;
   }
 
   .game-video {
@@ -1121,6 +1211,13 @@ label[for=isChild] {
   }
 }
 
+@media (max-width: 499px) {
+  .datetime-reserve .input-reserve {
+  display: block;
+  width: 100%;
+  }
+}
+
 @media (max-width: 500px) {
 
   .container-footer {
@@ -1135,6 +1232,10 @@ label[for=isChild] {
   .tel {
     margin-right: 0;
     margin-bottom: 10px;
+  }
+
+  .button-reserve {
+    width: 100%;
   }
 }
 

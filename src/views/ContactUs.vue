@@ -5,7 +5,7 @@
 
         <div class="logo">
         <router-link class="about-link" tag="a" to="/" title="На главную">
-        <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto" alt="DriV3R">
+        <img :src="this.publicPath + 'footer.png'" width="200px" height="auto" alt="DriV3R">
         </router-link>
       </div>
 
@@ -34,44 +34,33 @@
       </div>
 
       <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
-        
+
       </div>
 
       </div>
     </div>
 
-    <div class="container container-about">
+    <div class="container container-contactus">
 
       <vk-breadcrumb>
         <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
-        <vk-breadcrumb-item>Забронировать</vk-breadcrumb-item>
+        <vk-breadcrumb-item>Забронировать место</vk-breadcrumb-item>
       </vk-breadcrumb>
 
       <h1 class="about-header">Забронируйте место</h1>
 
-<!--       <form class="contact-form" @submit.prevent="sendEmail">
-        <label>Name </label>
-        <input type="text" name="user_name"><br>
-        <label>Email </label>
-        <input type="email" name="user_email"><br>
-        <label>Message </label>
-        <textarea name="message"></textarea><br>
-        <input type="submit" value="Send">
-      </form> -->
-
-      <form action="https://send.pageclip.co/YR97n0GUKhRoDRB8QgxgjFgUXX86SOa5/contact-form" class="pageclip-form" method="post">
-  <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
-
-  <!-- It looks like you are creating a contact form. These email and subject fields are special -->
-  <!-- See https://pageclip.co/docs#special-fields for more info -->
-  <input type="email" name="email" value="roscoe@example.com" />
-  <input type="text" name="subject" value="A contact subject" />
-
-  <!-- This button will have a loading spinner. Keep the inner span for best results. -->
-  <button type="submit" class="pageclip-form__submit">
-    <span>Send</span>
-  </button>
-</form>
+      <form action="https://send.pageclip.co/YR97n0GUKhRoDRB8QgxgjFgUXX86SOa5/contact-form" method="post" class="form-reserve" autocomplete="off">
+          <input type="text" name="subject" value="" placeholder="Имя" class="input-reserve" title="" required>
+          <input type="tel" class="input-reserve" id="tel" name="tel" placeholder="Телефон в формате 8-(XXX)-XXX-XX-XX"  title=""  required>
+          <div class="datetime-reserve">
+            <input type="text" id="date" name="date" class="input-reserve" placeholder="Дата в формате ДД.ММ.ГГГГ" title="" required>
+            <input type="text" id="time" name="time" class="input-reserve" placeholder="Время в формате ЧЧ:ММ" title="" required>
+          </div>
+          <textarea name="extras" rows="5" placeholder="Дополнительные пожелания" class="input-reserve textarea-reserve" title=""></textarea>
+          <button  class="button-reserve" type="submit">
+            <span>Забронировать</span>
+          </button>
+      </form>
 
     </div>
 
@@ -79,7 +68,7 @@
     <div class="container container-footer">
       <div class="logo">
         <router-link class="about-link" tag="a" to="/about" title="О нас">
-        <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto" alt="DriV3R">
+        <img :src="this.publicPath + 'footer.png'" width="200px" height="auto" alt="DriV3R">
         </router-link>
       </div>
       <div class="tel">
@@ -99,7 +88,8 @@
 </template>
 
 <script>
-import emailjs from 'emailjs-com';
+
+import IMask from 'imask';
 
 export default {
   name: 'contactus',
@@ -113,19 +103,60 @@ export default {
     sendEmail: (e) => {
       emailjs.sendForm('mailjet', 'template_YbJVn2PN', e.target, 'user_5TDlh1RP0pNJnakwgtsyh')
         .then((result) => {
-            console.log('SUCCESS!', response.status, response.text);
+          console.log('SUCCESS!', response.status, response.text)
         }, (error) => {
-            console.log('FAILED...', error);
-        });
+          console.log('FAILED...', error)
+        })
     }
+  },
+  mounted () {
+    let showhideTel = document.getElementById('tel');
+    let patternMaskTel = new IMask(showhideTel, {
+      mask: '{8}-(000)-000-00-00',
+      lazy: true,
+      placeholderChar: '_'
+    });
+    showhideTel.addEventListener('focus', function() {
+      patternMaskTel.updateOptions({ lazy: false });
+    }, true);
+    showhideTel.addEventListener('blur', function() {
+      patternMaskTel.updateOptions({ lazy: true });
+      if (!patternMaskTel.masked.rawInputValue) {
+        patternMaskTel.value = '';
+      }
+    }, true);
+
+    let showhideDate = document.getElementById('date');
+    let patternMaskDate = new IMask(showhideDate, {
+      mask: '00.00.0000',
+      lazy: true,  // make placeholder always visible
+      placeholderChar: '_'     // defaults to '_'
+    });
+    showhideDate.addEventListener('focus', function() {
+      patternMaskDate.updateOptions({ lazy: false });
+    }, true);
+    showhideDate.addEventListener('blur', function() {
+      patternMaskDate.updateOptions({ lazy: true });
+      if (!patternMaskDate.masked.rawInputValue) {
+        patternMaskDate.value = '';
+      }
+    }, true);
+
+    let showhideTime = document.getElementById('time');
+    let patternMaskTime = new IMask(showhideTime, {
+      mask: '00:00',
+      lazy: true,  // make placeholder always visible
+      placeholderChar: '_'     // defaults to '_'
+    });
+    showhideTime.addEventListener('focus', function() {
+      patternMaskTime.updateOptions({ lazy: false });
+    }, true);
+    showhideTime.addEventListener('blur', function() {
+      patternMaskTime.updateOptions({ lazy: true });
+      if (!patternMaskTime.masked.rawInputValue) {
+        patternMaskTime.value = '';
+      }
+    }, true);
   }
 }
 </script>
-
-<style scoped>
-
-  input {
-    margin-bottom: 10px;
-  }
-
-</style>

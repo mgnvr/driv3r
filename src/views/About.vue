@@ -34,7 +34,7 @@
       </div>
 
       <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
-        
+
       </div>
 
       </div>
@@ -171,9 +171,7 @@ export default {
             initialZoom: '18'
         }
       }
-    });
-
-
+    })
   }
 }
 </script>
