@@ -49,15 +49,16 @@
 
       <h1 class="about-header">Забронируйте место</h1>
 
-      <form action="https://send.pageclip.co/YR97n0GUKhRoDRB8QgxgjFgUXX86SOa5/contact-form" method="post" class="form-reserve" autocomplete="off">
-          <input type="text" name="subject" value="" placeholder="Имя" class="input-reserve" title="" required>
-          <input type="tel" class="input-reserve" id="tel" name="tel" placeholder="Телефон в формате 8-(XXX)-XXX-XX-XX"  title=""  required>
+      <form action="https://send.pageclip.co/15aM5PlDtw71Dc6mPeLGw0SuDRDWXyQj" method="post" class="form-reserve pageclip-form" autocomplete="off">
+          <input type="text" name="Имя" value="" placeholder="Имя" class="input-reserve" title="" required>
+          <input type="tel" class="input-reserve" id="tel" name="Телефон" placeholder="Телефон в формате 8-(XXX)-XXX-XX-XX"  title=""  required>
           <div class="datetime-reserve">
-            <input type="text" id="date" name="date" class="input-reserve" placeholder="Дата в формате ДД.ММ.ГГГГ" title="" required>
-            <input type="text" id="time" name="time" class="input-reserve" placeholder="Время в формате ЧЧ:ММ" title="" required>
+            <input type="text" id="date" name="Дата" class="input-reserve" placeholder="Дата в формате ДД.ММ.ГГГГ" title="" required>
+            <input type="text" id="time" name="Время" class="input-reserve" placeholder="Время в формате ЧЧ:ММ" title="" required>
           </div>
-          <textarea name="extras" rows="5" placeholder="Дополнительные пожелания" class="input-reserve textarea-reserve" title=""></textarea>
-          <button  class="button-reserve" type="submit">
+          <input type="number" id="count" name="Количество человек" class="input-reserve" placeholder="Количество человек (максимум - 5)" min="1" max="5" required>
+          <textarea name="Дополнительно" rows="5" placeholder="Дополнительные пожелания" class="input-reserve textarea-reserve" title=""></textarea>
+          <button  class="button-reserve button pageclip-form__submit" type="submit">
             <span>Забронировать</span>
           </button>
       </form>
@@ -99,16 +100,6 @@ export default {
       publicPath: process.env.BASE_URL
     }
   },
-  methods: {
-    sendEmail: (e) => {
-      emailjs.sendForm('mailjet', 'template_YbJVn2PN', e.target, 'user_5TDlh1RP0pNJnakwgtsyh')
-        .then((result) => {
-          console.log('SUCCESS!', response.status, response.text)
-        }, (error) => {
-          console.log('FAILED...', error)
-        })
-    }
-  },
   mounted () {
     let showhideTel = document.getElementById('tel');
     let patternMaskTel = new IMask(showhideTel, {
@@ -129,8 +120,8 @@ export default {
     let showhideDate = document.getElementById('date');
     let patternMaskDate = new IMask(showhideDate, {
       mask: '00.00.0000',
-      lazy: true,  // make placeholder always visible
-      placeholderChar: '_'     // defaults to '_'
+      lazy: true,
+      placeholderChar: '_'
     });
     showhideDate.addEventListener('focus', function() {
       patternMaskDate.updateOptions({ lazy: false });
@@ -145,8 +136,8 @@ export default {
     let showhideTime = document.getElementById('time');
     let patternMaskTime = new IMask(showhideTime, {
       mask: '00:00',
-      lazy: true,  // make placeholder always visible
-      placeholderChar: '_'     // defaults to '_'
+      lazy: true,
+      placeholderChar: '_'
     });
     showhideTime.addEventListener('focus', function() {
       patternMaskTime.updateOptions({ lazy: false });
@@ -157,6 +148,13 @@ export default {
         patternMaskTime.value = '';
       }
     }, true);
+
+    var form = document.querySelector('.pageclip-form')
+Pageclip.form(form, {
+  onSubmit: function (event) { },
+  onResponse: function (error, response) { },
+  successTemplate: "<span>Спасибо, заявка успешно отправлена</span><a class='back-home' href='https://mgnvr.github.io/driv3r'>Вернуться на главную</a>"
+})
   }
 }
 </script>

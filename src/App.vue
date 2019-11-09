@@ -92,24 +92,23 @@ a {
   font-size: 20px;
 }
 
-.back-home {
+a.back-home {
   display: inline-block;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
   color: #ffffff;
   font-size: 14px;
   background-color: #89253e;
   transition: .3s linear;
-  background-image: url("/driv3r/home.svg");
   background-repeat: no-repeat;
   background-position: left center;
 }
 
-.back-home:hover {
+a.back-home:hover {
+  color: #ffffff !important;
   background: #6e1e32;
-  background-image: url("/driv3r/home.svg");
-  background-repeat: no-repeat;
-  background-position: left center;
   transition: .3s linear;
 }
 
@@ -974,6 +973,38 @@ label[for=isChild] {
 .datetime-reserve .input-reserve {
   width: 49%;
   display: inline-block;
+}
+
+.pageclip-form__success {
+  font-size: 16px;
+  font-weight: bold;
+  color: #210832;
+}
+
+.pageclip-form__success::before,
+.pageclip-form__success::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: #210832;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.pageclip-form__success::before {
+  top: 15px;
+  right: 15px;
+  background: #210832;
+  transform: rotate(45deg);
+}
+
+.pageclip-form__success::after {
+  top: 15px;
+  right: 15px;
+  background: #210832;
+  transform: rotate(-45deg);
 }
 
 @-webkit-keyframes tabs-ripple {
