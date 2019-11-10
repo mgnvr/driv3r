@@ -917,6 +917,7 @@ label[for=isChild] {
   outline: none;
   background-color: #1a0628;
   transition: all .3s linear;
+  outline: none;
 }
 
 .input-reserve:hover {
@@ -981,7 +982,7 @@ label[for=isChild] {
   color: #210832;
 }
 
-.pageclip-form__success::before,
+/*.pageclip-form__success::before,
 .pageclip-form__success::after {
   display: block;
   content: '';
@@ -996,14 +997,51 @@ label[for=isChild] {
 .pageclip-form__success::before {
   top: 15px;
   right: 15px;
-  background: #210832;
   transform: rotate(45deg);
 }
 
 .pageclip-form__success::after {
   top: 15px;
   right: 15px;
-  background: #210832;
+  transform: rotate(-45deg);
+}*/
+
+.form-close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background: #89253e;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.form-close:hover {
+  background: #6e1e32;
+  transition: all .3s linear;
+}
+
+.form-close::before,
+.form-close::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 5px;
+  width: 15px;
+  height: 2px;
+  background: #ffffff;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.form-close::before {
+  transform: rotate(45deg);
+}
+
+.form-close::after {
   transform: rotate(-45deg);
 }
 
