@@ -1,60 +1,55 @@
 <template>
   <div>
-    <div class="header">
+    <div class="header header-not-home">
       <div class="container container-header">
-
         <div class="logo">
-        <router-link class="about-link" tag="a" to="/" title="На главную">
-        <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
-        </router-link>
+          <router-link class="about-link" tag="a" to="/" title="На главную">
+            <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
+          </router-link>
+        </div>
+        <div class="header-items">
+          <p class="header-item">
+            Мы находимся: г. Магнитогорск, ул. Ленина, 83 | ТЦ "Континент", 3 этаж
+          </p>
+          <p class="header-item">
+            Мы работаем: ежедневно с 10:00 до 21:00
+          </p>
+        </div>
+        <div class="header-info">
+          <div class="tel">
+            <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
+          </div>
+          <div class="social">
+            <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
+              <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
+            </a>
+          </div>
+          <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
+        </div>
       </div>
-
-      <div class="header-items">
-
-      <p class="header-item">
-        Мы находимся: г. Магнитогорск, ул. Ленина, 83 | ТЦ "Континент", 3 этаж
-      </p>
-
-      <p class="header-item">
-        Мы работаем: ежедневно с 10:00 до 21:00
-      </p>
-
-      </div>
-
-      <div class="header-info">
-
-      <div class="tel">
-        <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
-      </div>
-
-      <div class="social">
-        <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
-          <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
-        </a>
-      </div>
-
-      <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
-
-      </div>
-
+    </div>
+    <div class="breadcrumb-container">
+      <div class="container container-game">
+        <vk-breadcrumb>
+          <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
+          <vk-breadcrumb-item>{{ game.title }}</vk-breadcrumb-item>
+        </vk-breadcrumb>
       </div>
     </div>
     <div class="container container-game">
-      <vk-breadcrumb>
+      <!--       <vk-breadcrumb>
         <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
         <vk-breadcrumb-item>{{ game.title }}</vk-breadcrumb-item>
-      </vk-breadcrumb>
+      </vk-breadcrumb> -->
       <div class="desc">
         <div class="game-title">
           <h1 class="game-name">{{ game.title }} <button ref="buttonLike" @click="putLike()" :class="{ liked }" class="like" title="Добавить в избранное / Удалить из избранного">
-          </button></h1>
+            </button></h1>
         </div>
         <flash-message transitionName="flash" class="flash-message flashpool"></flash-message>
-
         <p><b class="desc">Жанр:</b> {{ game.genre }}</p>
         <p class="game-description"><b class="desc">Описание:</b> {{ game.description }}</p>
-
-        <carousel :perPage="1" paginationActiveColor="#89253e" paginationColor="#ffffff" :minSwipeDistance="50">
+        <!--         <carousel :perPage="1" paginationActiveColor="#89253e" paginationColor="#ffffff" :minSwipeDistance="50">
           <slide>
             <img :src="game.image1" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
           </slide>
@@ -64,7 +59,18 @@
           <slide>
             <img :src="game.image3" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
           </slide>
-        </carousel>
+        </carousel> -->
+        <agile :options="sliderOptions">
+          <div class="slide">
+            <img :src="game.image1" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
+          </div>
+          <div class="slide">
+            <img :src="game.image2" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
+          </div>
+          <div class="slide">
+            <img :src="game.image3" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
+          </div>
+        </agile>
         <!-- <img :src="game.image" class="game-image" width="100%" height="auto"> -->
         <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
           <iframe class="embed-responsive-item game-video" :src="game.video" allowfullscreen width="100%"></iframe>
@@ -72,42 +78,48 @@
       </div>
     </div>
     <div class="footer">
-    <div class="container container-footer">
-      <div class="logo">
-        <router-link class="about-link" tag="a" to="/about" title="О нас">
-        <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
-        </router-link>
-      </div>
-      <div class="tel">
-        <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
-      </div>
-      <div class="social">
-        <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
-          <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
-        </a>
-      </div>
-      <div class="copyright">
-        &#9400; Driv3r, 2017 - 2019 | По всем вопросам обращаться по телефону или в группу ВКонтакте
+      <div class="container container-footer">
+        <div class="logo">
+          <router-link class="about-link" tag="a" to="/about" title="О нас">
+            <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
+          </router-link>
+        </div>
+        <div class="tel">
+          <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
+        </div>
+        <div class="social">
+          <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
+            <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
+          </a>
+        </div>
+        <div class="copyright">
+          &#9400; Driv3r, 2017 - 2019 | По всем вопросам обращаться по телефону или в группу ВКонтакте
+        </div>
       </div>
     </div>
   </div>
-  </div>
 </template>
-
 <script>
-
-// import { Carousel, Slide } from 'vue-carousel'
-
 export default {
-  data () {
+  data() {
     return {
       sitename: 'Driv3r - Каталог игр',
       publicPath: process.env.BASE_URL,
-      game: ''
+      game: '',
+      sliderOptions: {
+        navButtons: false,
+        responsive: [{
+            breakpoint: 500,
+            settings: {
+              navButtons: true
+            }
+          }
+        ]
+      }
     }
   },
   methods: {
-    putLike: function () {
+    putLike: function() {
       this.liked = !this.liked
 
       if (this.$refs.buttonLike.classList.contains('liked')) {
@@ -123,10 +135,10 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted() {
     // this.game = this.$store.getters.getGameById(this.$route.params.id)
   },
-  created: function () {
+  created: function() {
     this.game = this.$store.state.games.find(game => {
       return game.id == this.$route.params.id
     })
@@ -145,10 +157,10 @@ export default {
   },
   computed: {
     liked: {
-      get () {
+      get() {
         return this.$store.state.wishlistIds.includes(this.game.id)
       },
-      set (val) {
+      set(val) {
         this.$store.commit(val ? 'addGame' : 'removeGame', this.game.id)
       }
     }

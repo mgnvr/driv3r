@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="header">
+    <div class="header header-not-home">
       <div class="container container-header">
         <div class="logo">
           <router-link class="about-link" tag="a" to="/" title="На главную">
@@ -28,11 +28,15 @@
         </div>
       </div>
     </div>
+        <div class="breadcrumb-container">
+      <div class="container container-game">
+        <vk-breadcrumb>
+          <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
+          <vk-breadcrumb-item>Забронировать место</vk-breadcrumb-item>
+        </vk-breadcrumb>
+      </div>
+    </div>
     <div class="container container-contactus">
-      <vk-breadcrumb>
-        <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
-        <vk-breadcrumb-item>Забронировать место</vk-breadcrumb-item>
-      </vk-breadcrumb>
       <h1 class="about-header">Забронируйте место</h1>
       <form action="https://send.pageclip.co/YR97n0GUKhRoDRB8QgxgjFgUXX86SOa5" method="post" class="form-reserve pageclip-form" autocomplete="off">
         <input type="text" name="Имя" value="" placeholder="Имя" class="input-reserve" title="" required>

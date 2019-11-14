@@ -10,9 +10,12 @@ import store from './store'
 import createPersistedState from 'vuex-persistedstate'
 import VueFlashMessage from 'vue-flash-message'
 import VueCarousel from 'vue-carousel'
+// import VueCarousel from '@chenfengyuan/vue-carousel'
 import BackToTop from 'vue-backtotop'
+import VueAgile from 'vue-agile'
 
 require('vue-flash-message/dist/vue-flash-message.min.css')
+require('vue-agile/dist/VueAgile.css')
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
@@ -21,6 +24,7 @@ Vue.use(Vuikit)
 Vue.use(VueFlashMessage)
 Vue.use(VueCarousel)
 Vue.use(BackToTop)
+Vue.use(VueAgile)
 
 new Vue({
   router,

@@ -102,12 +102,14 @@
               <div class="select-container">
                 <div class="select-item">
                   <label class="label-genre" for="genre">Выбрать жанр</label>
-                  <select v-model="genre" id="genre" class="uk-select">
-                    <option :selected="genre === 'все'" value="все">все</option>
+                  <select v-model="genreHTC" id="genre" class="uk-select">
+                    <option :selected="genreHTC === 'все'" value="все">все</option>
                     <option>симулятор</option>
                     <option>шутер</option>
                     <option>экшн</option>
                     <option>музыкальная</option>
+                    <option>песочница</option>
+                    <option>файтинг</option>
                     <option>хоррор</option>
                     <option>спорт</option>
                     <option>квест</option>
@@ -145,8 +147,8 @@
               <div class="select-container">
                 <div class="select-item">
                   <label class="label-genre" for="genre">Выбрать жанр</label>
-                  <select v-model="genre" id="genre" class="uk-select">
-                    <option :selected="genre === 'все'" value="все">все</option>
+                  <select v-model="genrePSVR" id="genre" class="uk-select">
+                    <option :selected="genrePSVR === 'все'" value="все">все</option>
                     <option>симулятор</option>
                     <option>экшн</option>
                     <option>аркада</option>
@@ -184,8 +186,8 @@
               <div class="select-container">
                 <div class="select-item">
                   <label class="label-genre" for="genre">Выбрать жанр</label>
-                  <select v-model="genre" id="genre" class="uk-select">
-                    <option :selected="genre === 'все'" value="все">все</option>
+                  <select v-model="genrePS4" id="genre" class="uk-select">
+                    <option :selected="genrePS4 === 'все'" value="все">все</option>
                     <option>шутер</option>
                     <option>экшн</option>
                     <option>ролевая</option>
@@ -279,7 +281,9 @@ export default {
       isOpened: false,
       isSwitched: false,
       // isEmpty: false,
-      genre: 'все',
+      genreHTC: 'все',
+      genrePS4: 'все',
+      genrePSVR: 'все',
       isChild: false
     }
   },
@@ -318,17 +322,17 @@ export default {
         switched: this.isSwitched
       }
     },
-    showGames () {
-      return this.$store.getters.showAllGames(this.search, this.genre, this.isChild)
-    },
+    // showGames () {
+    //   return this.$store.getters.showAllGames(this.search, this.genre, this.isChild)
+    // },
     showGamesByHTC () {
-      return this.$store.getters.showHTCGames(this.search, this.genre, this.isChild)
+      return this.$store.getters.showHTCGames(this.search, this.genreHTC, this.isChild)
     },
     showGamesByPSVR () {
-      return this.$store.getters.showPSVRGames(this.search, this.genre, this.isChild)
+      return this.$store.getters.showPSVRGames(this.search, this.genrePSVR, this.isChild)
     },
     showGamesByPS4 () {
-      return this.$store.getters.showPS4Games(this.search, this.genre, this.isChild)
+      return this.$store.getters.showPS4Games(this.search, this.genrePS4, this.isChild)
     },
     showLikedGames () {
       return this.$store.getters.wishlist(this.search)
