@@ -1326,14 +1326,13 @@ label[for=isChild] {
 }
 
 .developer {
-  margin-top: 7px;
   font-size: 12px;
   color: #ccc;
 }
 
 .developer a {
-  border: 1px solid rgba(255, 255, 255, .3);
-  padding: 3px;
+  position: relative;
+  top: 2px;  
 }
 
 @-webkit-keyframes shrink-bounce {
