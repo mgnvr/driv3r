@@ -2,73 +2,50 @@
   <div>
     <div class="header">
       <div class="container container-header">
-
         <div class="logo">
-        <router-link class="about-link" tag="a" to="/" title="На главную">
-        <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
-        </router-link>
-      </div>
-
-      <div class="header-items">
-
-      <p class="header-item">
-        Мы находимся: г. Магнитогорск, ул. Ленина, 83 | ТЦ "Континент", 3 этаж
-      </p>
-
-      <p class="header-item">
-        Мы работаем: ежедневно с 10:00 до 21:00
-      </p>
-
-      </div>
-
-      <div class="header-info">
-
-      <div class="tel">
-        <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
-      </div>
-
-      <div class="social">
-        <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
-          <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
-        </a>
-      </div>
-
-      <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
-
-      </div>
-
-      </div>
-    </div>
-
-      <div class="search">
-        <div class="container container-search">
-          <div></div>
-          <div :class="containerInput" class="search-input">
-            <div class="container container-input">
-              <input
-                ref="searchGame"
-                v-model="search"
-                type="text"
-                placeholder="Поиск игры..."
-                autofocus
-                class="search-game"
-              >
-            </div>
+          <router-link class="about-link" tag="a" to="/" title="На главную">
+            <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
+          </router-link>
+        </div>
+        <div class="header-items">
+          <p class="header-item">
+            Мы находимся: г. Магнитогорск, ул. Ленина, 83 | ТЦ "Континент", 3 этаж
+          </p>
+          <p class="header-item">
+            Мы работаем: ежедневно с 10:00 до 21:00
+          </p>
+        </div>
+        <div class="header-info">
+          <div class="tel">
+            <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
           </div>
-
-          <button @click="showInput()" :class="buttonInput" ref="buttonGame" class="toggle-search"></button>
+          <div class="social">
+            <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
+              <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
+            </a>
+          </div>
+          <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
         </div>
       </div>
-
+    </div>
+    <div class="search">
+      <div class="container container-search">
+        <div></div>
+        <div :class="containerInput" class="search-input">
+          <div class="container container-input">
+            <input ref="searchGame" v-model="search" type="text" placeholder="Поиск игры..." autofocus class="search-game">
+          </div>
+        </div>
+        <button @click="showInput()" :class="buttonInput" ref="buttonGame" class="toggle-search"></button>
+      </div>
+    </div>
     <section>
       <back-to-top visibleoffset="500">
         <img :src="this.publicPath + 'up.svg'" alt="Наверх" width="15px" height="15px" title="Наверх">
       </back-to-top>
       <div class="container container--tabs">
-
         <vk-tabs align="justify">
-
-<!--           <vk-tabs-item title="ВСЕ">
+          <!--           <vk-tabs-item title="ВСЕ">
             <div class="container container-select">
               <div class="select-container">
                 <label class="label-genre" for="genre">Выбрать жанр</label>
@@ -96,7 +73,6 @@
       </div>
     </div>
           </vk-tabs-item> -->
-
           <vk-tabs-item v-bind:title="'HTC ' + '(' + this.$store.state.games.filter(game => game.category==='htc').length + ')'">
             <div class="container container-select">
               <div class="select-container">
@@ -121,7 +97,6 @@
                     <option>многопользовательская</option>
                   </select>
                 </div>
-
                 <div class="select-item  select-item--checkbox">
                   <label for="isChild" class="label-genre">Для детей</label>
                   <input v-model="isChild" type="checkbox" id="isChild">
@@ -141,7 +116,6 @@
               </div>
             </div>
           </vk-tabs-item>
-
           <vk-tabs-item v-bind:title="'PSVR ' + '(' + this.$store.state.games.filter(game => game.category==='psvr').length + ')'">
             <div class="container container-select">
               <div class="select-container">
@@ -160,7 +134,6 @@
                     <option>многопользовательская</option>
                   </select>
                 </div>
-
                 <div class="select-item">
                   <label for="isChild" class="label-genre">Для детей</label>
                   <input v-model="isChild" type="checkbox" id="isChild">
@@ -180,7 +153,6 @@
               </div>
             </div>
           </vk-tabs-item>
-
           <vk-tabs-item v-bind:title="'PS4 ' + '(' + this.$store.state.games.filter(game => game.category==='ps').length + ')'">
             <div class="container container-select">
               <div class="select-container">
@@ -202,7 +174,6 @@
                     <option>многопользовательская</option>
                   </select>
                 </div>
-
                 <div class="select-item">
                   <label for="isChild" class="label-genre">Для детей</label>
                   <input v-model="isChild" type="checkbox" id="isChild">
@@ -222,7 +193,6 @@
               </div>
             </div>
           </vk-tabs-item>
-
           <vk-tabs-item v-bind:title="'МОИ ' + '(' + this.$store.state.wishlistIds.length + ')'">
             <div class="wrapper container">
               <div v-if="isEmpty">
@@ -240,38 +210,36 @@
               </div>
             </div>
           </vk-tabs-item>
-
         </vk-tabs>
       </div>
     </section>
-
     <div class="footer">
-    <div class="container container-footer">
-      <div class="logo">
-        <router-link class="about-link" tag="a" to="/about" title="О нас">
-        <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
-        </router-link>
-      </div>
-      <div class="tel">
-        <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
-      </div>
-      <div class="social">
-        <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
-          <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
-        </a>
-      </div>
-      <div class="copyright">
-        &#9400; Driv3r, 2017 - 2019 | По всем вопросам обращаться по телефону или в группу ВКонтакте
+      <div class="container container-footer">
+        <div class="logo">
+          <router-link class="about-link" tag="a" to="/about" title="О нас">
+            <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
+          </router-link>
+        </div>
+        <div class="tel">
+          <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
+        </div>
+        <div class="social">
+          <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
+            <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
+          </a>
+        </div>
+        <div class="copyright">
+          &#9400; Driv3r, 2017 - 2019 | По всем вопросам обращаться по телефону или в группу ВКонтакте <div>
+            Дизайн и разработка <a href="https://vk.com/primirenkov" target="_blank"><img :src="this.publicPath + 'ps.svg'" alt="Сергей Примиренков" style="border: 1px solid rgba(255, 255, 255, .3);padding: 3px;"></a></div>
+        </div>
       </div>
     </div>
   </div>
-  </div>
 </template>
-
 <script>
 export default {
   name: 'home',
-  data () {
+  data() {
     return {
       sitename: 'Driv3r - Каталог игр',
       publicPath: process.env.BASE_URL,
@@ -288,7 +256,7 @@ export default {
     }
   },
   methods: {
-    showInput: function () {
+    showInput: function() {
       if (this.$refs.buttonGame.classList.contains('switched')) {
         this.isOpened = !this.isOpened
         this.isSwitched = !this.isSwitched
@@ -296,28 +264,27 @@ export default {
       } else {
         this.isOpened = !this.isOpened
         this.isSwitched = !this.isSwitched
-        this.$nextTick(function () {
+        this.$nextTick(function() {
           this.$refs.searchGame.focus()
         })
       }
     }
   },
-  mounted () {
+  mounted() {
     this.$store.dispatch('loadGames')
 
     if (this.$store.state.wishlistIds.length == 0) {
       this.isEmpty = !this.isEmpty
     }
   },
-  created () {
-  },
+  created() {},
   computed: {
-    containerInput: function () {
+    containerInput: function() {
       return {
         opened: this.isOpened
       }
     },
-    buttonInput: function () {
+    buttonInput: function() {
       return {
         switched: this.isSwitched
       }
@@ -325,21 +292,22 @@ export default {
     // showGames () {
     //   return this.$store.getters.showAllGames(this.search, this.genre, this.isChild)
     // },
-    showGamesByHTC () {
+    showGamesByHTC() {
       return this.$store.getters.showHTCGames(this.search, this.genreHTC, this.isChild)
     },
-    showGamesByPSVR () {
+    showGamesByPSVR() {
       return this.$store.getters.showPSVRGames(this.search, this.genrePSVR, this.isChild)
     },
-    showGamesByPS4 () {
+    showGamesByPS4() {
       return this.$store.getters.showPS4Games(this.search, this.genrePS4, this.isChild)
     },
-    showLikedGames () {
+    showLikedGames() {
       return this.$store.getters.wishlist(this.search)
     },
-    isEmpty () {
+    isEmpty() {
       return !this.$store.state.wishlistIds.length
     }
   }
 }
+
 </script>
