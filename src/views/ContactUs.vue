@@ -42,7 +42,7 @@
         <input type="text" name="Имя" value="" placeholder="Имя" class="input-reserve" title="" required>
         <input type="tel" class="input-reserve" id="tel" name="Телефон" placeholder="Телефон в формате 8-(XXX)-XXX-XX-XX" pattern="8-\([0-9]{3}\)-[0-9]{3}-[0-9]{2}-[0-9]{2}" title="" required>
         <div class="datetime-reserve">
-          <input type="text" id="date" name="Дата" class="input-reserve" placeholder="Дата в формате ДД.ММ.ГГГГ" pattern="\d{1,2}.\d{1,2}.\d{4}" title="" required>
+          <input type="text" id="date" name="Дата" class="input-reserve" placeholder="Дата в формате ДД.ММ" pattern="\d{2}.\d{2}" title="" required>
           <input type="text" id="time" name="Время" class="input-reserve" placeholder="Время в формате ЧЧ:ММ" title="" pattern="\d{2}:\d{2}" required>
         </div>
         <input type="number" id="count" name="Количество человек" class="input-reserve" placeholder="Количество человек (максимум - 5)" min="1" max="5" title="" required>
@@ -125,7 +125,7 @@ export default {
 
     let showhideDate = document.getElementById('date');
     let patternMaskDate = new IMask(showhideDate, {
-      mask: '00.00.0000',
+      mask: '00.00',
       lazy: true,
       placeholderChar: '_'
     });
