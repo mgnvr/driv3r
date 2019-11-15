@@ -1325,6 +1325,17 @@ label[for=isChild] {
   color: #fff;
 }
 
+.developer {
+  margin-top: 7px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.developer a {
+  border: 1px solid rgba(255, 255, 255, .3);
+  padding: 3px;
+}
+
 @-webkit-keyframes shrink-bounce {
   0% {
     -webkit-transform: scale(1);
