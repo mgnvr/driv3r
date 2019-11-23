@@ -979,6 +979,7 @@ label[for=isChild] {
   padding: 15px;
   font-size: 14px;
   color: #fff;
+  text-transform: uppercase;
   border: none;
 /*  border: 3px solid #89253e;*/
   background: #89253e;

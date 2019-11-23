@@ -3,9 +3,7 @@
     <div class="header">
       <div class="container container-header">
         <div class="logo">
-          <router-link class="about-link" tag="a" to="/" title="На главную">
             <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto">
-          </router-link>
         </div>
         <div class="header-items">
           <p class="header-item">
