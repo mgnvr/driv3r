@@ -1275,6 +1275,32 @@
         "isChild": false
     },
     {
+        "id": 99,
+        "title": "Pistol Whip",
+        "description": "Pistol Whip - это экшн-ритм игра. Комбинация Superhot, Beat Saber и Джона Уика с головокружительным саундтреком. Станьте главным героем боевика.",
+        "thumbnail": "images/pistol_whip/thumbnail.jpg",
+        "image1": "images/pistol_whip/1.jpg",
+        "image2": "images/pistol_whip/2.jpg",
+        "image3": "images/pistol_whip/3.jpg",
+        "video": "https://www.youtube.com/embed/KUwzpaReU5g",
+        "category": "htc",
+        "genre": "экшн",
+        "isChild": false
+    },
+    {
+        "id": 100,
+        "title": "Hockey Player VR",
+        "description": "Играйте в хоккей от первого лица и развивайте свою тактику и приемы. Проверьте свои навыки игры в многопользовательском онлайн-режиме.",
+        "thumbnail": "images/hockey_player/thumbnail.jpg",
+        "image1": "images/hockey_player/1.jpg",
+        "image2": "images/hockey_player/2.jpg",
+        "image3": "images/hockey_player/3.jpg",
+        "video": "https://www.youtube.com/embed/4hUazXzMrAg",
+        "category": "htc",
+        "genre": "спорт",
+        "isChild": true
+    },
+    {
         "id": 300,
         "title": "The Playroom VR",
         "description": "Вместе вы окунетесь в мир захватывающих противоборств и командных игр. Вас ждут «Монстр на свободе», забавные курьезы «Кошек-мышек», пугающие испытания в «Доме с призраками», остросюжетные приключения в платформере для двух игроков «Роботы-спасатели» и путешествие на бандитский Дикий Запад в «Розыске!» — но не забывайте приглядывать за дерзкими проделками виртуальных роботов.",
