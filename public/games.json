@@ -1600,19 +1600,6 @@
         "isChild": true
     },
     {
-        "id": 323,
-        "title": "WipEout Omega Collection",
-        "description": "Рассекайте воздух на головокружительных скоростях в быстрых гонках, которые можно выиграть или проиграть в мгновение ока. Гоняйте на 26 реверсивных трассах, управляйте 46 уникальными кораблями в 9 режимах.",
-        "thumbnail": "images/wipeout/thumbnail.jpg",
-        "image1": "images/wipeout/1.jpg",
-        "image2": "images/wipeout/2.jpg",
-        "image3": "images/wipeout/3.jpg",
-        "video": "https://www.youtube.com/embed/aVIk0VCTQgc",
-        "category": "psvr",
-        "genre": "гонка",
-        "isChild": true
-    },
-    {
         "id": 324,
         "title": "DRIVECLUB VR",
         "description": "Сочетая великолепную графику и совместимость PlayStation 4 с бесподобным погружением в игровые миры благодаря системе PlayStation VR, DRIVECLUB VR перенесет вас в самые живописные места мира, чтобы вы оказались в водительском кресле мощнейших автомобилей современности.",
@@ -2209,6 +2196,19 @@
         "category": "ps",
         "genre": "спорт",
         "isChild": true
+    },
+    {
+        "id": 582,
+        "title": "TEKKEN 7",
+        "description": "Любовь, месть, гордость. В созданной на основе движка Unreal Engine 4 игре TEKKEN 7 вас ждут красивейшие сюжетные битвы и поединки, в которых можно сражаться как с друзьями, так и соперниками.",
+        "thumbnail": "images/tekken_7/thumbnail.jpg",
+        "image1": "images/tekken_7/1.jpg",
+        "image2": "images/tekken_7/2.jpg",
+        "image3": "images/tekken_7/3.jpg",
+        "video": "https://www.youtube.com/embed/1V-_q3SKh5w",
+        "category": "ps",
+        "genre": "файтинг",
+        "isChild": false
     }
   ]
 }
