@@ -1613,19 +1613,6 @@
         "isChild": true
     },
     {
-        "id": 324,
-        "title": "DRIVECLUB VR",
-        "description": "Сочетая великолепную графику и совместимость PlayStation 4 с бесподобным погружением в игровые миры благодаря системе PlayStation VR, DRIVECLUB VR перенесет вас в самые живописные места мира, чтобы вы оказались в водительском кресле мощнейших автомобилей современности.",
-        "thumbnail": "images/driveclub_vr/thumbnail.jpg",
-        "image1": "images/driveclub_vr/1.jpg",
-        "image2": "images/driveclub_vr/2.jpg",
-        "image3": "images/driveclub_vr/3.jpg",
-        "video": "https://www.youtube.com/embed/dF75_VkdeY0",
-        "category": "psvr",
-        "genre": "гонка",
-        "isChild": true
-    },
-    {
         "id": 325,
         "title": "Farpoint",
         "description": "Вы оказались в недружелюбном мире, со всех сторон наступают враждебные существа. Обыщите каждый уголок загадочной планеты — вдруг кто-то остался в живых. Не забывайте свой дом. И помните: движение — жизнь.",
@@ -2161,12 +2148,25 @@
     {
         "id": 577,
         "title": "FIFA 19",
-        "description": "EA SPORTS FIFA 19 на базе Frostbite с UEFA Champions League — это новый улучшенный игровой процесс. Вас ждут новые непревзойденные игровые режимы и финал потрясающей истории Алекса Хантера в режиме «История: Чемпионы», новый режим знаменитой FIFA Ultimate Team™ и многое другое.",
+        "description": "FIFA 19 — это новый улучшенный игровой процесс. Вас ждут новые непревзойденные игровые режимы и финал потрясающей истории Алекса Хантера в режиме «История: Чемпионы», новый режим знаменитой FIFA Ultimate Team™ и многое другое.",
         "thumbnail": "images/fifa_19/thumbnail.jpg",
         "image1": "images/fifa_19/1.jpg",
         "image2": "images/fifa_19/2.jpg",
         "image3": "images/fifa_19/3.jpg",
         "video": "https://www.youtube.com/embed/zX0AV6yxyrQ",
+        "category": "ps",
+        "genre": "спорт",
+        "isChild": true
+    },
+    {
+        "id": 578,
+        "title": "FIFA 20",
+        "description": "FIFA 20 воссоздает два разных аспекта главной игры мира — престиж профессионального футбола и азарт уличной игры в совершенно новом режиме EA SPORTS VOLTA. FIFA 20 — это инновации во всем: система ФУТБОЛЬНОГО ИНТЕЛЛЕКТА открывает небывалые возможности реалистичности игрового процесса, FIFA Ultimate Team™ дает еще больше способов создания команды мечты, а EA SPORTS VOLTA возвращает футбол на улицы в реалистичных матчах с минимумом игроков.",
+        "thumbnail": "images/fifa_20/thumbnail.jpg",
+        "image1": "images/fifa_20/1.jpg",
+        "image2": "images/fifa_20/2.jpg",
+        "image3": "images/fifa_20/3.jpg",
+        "video": "https://www.youtube.com/embed/rrSpkJhZSuU",
         "category": "ps",
         "genre": "спорт",
         "isChild": true
@@ -2186,6 +2186,32 @@
     },
     {
         "id": 580,
+        "title": "NHL 20",
+        "description": "Очередная часть популярного спортивного симулятора, разработанного компанией Electronic Arts для игровой консоли Sony PlayStation 4. В обновленной версии пользователей ждет значительное улучшение геймплея. Созданный главным героем клуб проходит все этапы турнирной таблицы, двигаясь к заветному трофею Национальной хоккейной лиги. К уже привычным режимам добавлены состязания на выбывание, где центральный персонаж получает возможность продемонстрировать свое индивидуальное мастерство во владении клюшкой.",
+        "thumbnail": "images/nhl_20/thumbnail.jpg",
+        "image1": "images/nhl_20/1.jpg",
+        "image2": "images/nhl_20/2.jpg",
+        "image3": "images/nhl_20/3.jpg",
+        "video": "https://www.youtube.com/embed/wV7Uv-ftCLQ",
+        "category": "ps",
+        "genre": "спорт",
+        "isChild": true
+    },
+    {
+        "id": 581,
+        "title": "NBA 2K20",
+        "description": "Игра NBA 2K — это не просто симулятор баскетбола. Компания 2K продолжает расширять границы возможного в мире спортивных игр: NBA 2K20 обладает непревзойденными в жанре графикой и игровым процессом, инновационными режимами игры, неповторимой системой управления и невероятными возможностями персонализации. А благодаря реалистичному открытому миру Neighborhood игра NBA 2K20 позволит игрокам и поклонникам баскетбола объединиться и создать совершенную баскетбольную культуру.",
+        "thumbnail": "images/nba_20/thumbnail.jpg",
+        "image1": "images/nba_20/1.jpg",
+        "image2": "images/nba_20/2.jpg",
+        "image3": "images/nba_20/3.jpg",
+        "video": "https://www.youtube.com/embed/iFPWdc3PMBk",
+        "category": "ps",
+        "genre": "спорт",
+        "isChild": true
+    },
+    {
+        "id": 582,
         "title": "STEEP",
         "description": "Катайтесь в огромном открытом мире альпийских склонов, где снег всегда свежий, а трассы бесконечны. Покорите дикие земли Америки в бесплатном расширении «Аляска»: откройте новые горы и новые испытания!",
         "thumbnail": "images/steep/thumbnail.jpg",
@@ -2198,7 +2224,7 @@
         "isChild": true
     },
     {
-        "id": 581,
+        "id": 583,
         "title": "Trials Fusion",
         "description": "Trials Fusion сочетает в себе гонки на мотоциклах, основанные на законах физики, сумасшедший мультиплеер, глобальные списки лидеров, создание и публикацию собственных трасс и новую систему трюков FMX.",
         "thumbnail": "images/trials_fusion/thumbnail.jpg",
@@ -2211,7 +2237,7 @@
         "isChild": true
     },
     {
-        "id": 582,
+        "id": 584,
         "title": "TEKKEN 7",
         "description": "Любовь, месть, гордость. В созданной на основе движка Unreal Engine 4 игре TEKKEN 7 вас ждут красивейшие сюжетные битвы и поединки, в которых можно сражаться как с друзьями, так и соперниками.",
         "thumbnail": "images/tekken_7/thumbnail.jpg",
@@ -2221,6 +2247,19 @@
         "video": "https://www.youtube.com/embed/1V-_q3SKh5w",
         "category": "ps",
         "genre": "файтинг",
+        "isChild": false
+    },
+    {
+        "id": 585,
+        "title": "Death Stranding",
+        "description": "Отважьтесь преодолеть мир, трансформированный Петлей смерти. Держите в своих руках бессвязные остатки нашего будущего и отправляйтесь в дорогу, чтобы восстановить связь между осколками мира. В главных ролях: Норман Ридус, Мадс Миккельсен, Леа Сейду и Линдси Вагнер.",
+        "thumbnail": "images/death_stranding/thumbnail.jpg",
+        "image1": "images/death_stranding/1.jpg",
+        "image2": "images/death_stranding/2.jpg",
+        "image3": "images/death_stranding/3.jpg",
+        "video": "https://www.youtube.com/embed/41FRpY-JcN4",
+        "category": "ps",
+        "genre": "экшн",
         "isChild": false
     }
   ]
