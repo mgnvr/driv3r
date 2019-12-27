@@ -1288,8 +1288,7 @@ label[for=isChild] {
   transition: all .3s linear;
 }
 
-.agile__dot--current button,
-.agile__dot:hover button {
+.agile__dot--current button {
   background-color: #89253e;
   -webkit-transition: all .3s linear;
   -o-transition: all .3s linear;
