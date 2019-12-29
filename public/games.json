@@ -2277,6 +2277,19 @@
     },
     {
         "id": 587,
+        "title": "Kung Fu Panda: Showdown of Legendary Legends",
+        "description": "Сражайтесь вместе с По, Тигрицей, Обезьяной, Тай Лунгом, Мастером Шифу и другими любимыми персонажами «Кунг-фу панды» в грандиозном турнире по кунг-фу, известном как «Столкновение легендарных легенд».",
+        "thumbnail": "images/kung_fu_panda/thumbnail.jpg",
+        "image1": "images/kung_fu_panda/1.jpg",
+        "image2": "images/kung_fu_panda/2.jpg",
+        "image3": "images/kung_fu_panda/3.jpg",
+        "video": "https://www.youtube.com/embed/g0b1Ho7Z3yY",
+        "category": "ps",
+        "genre": "файтинг",
+        "isChild": true
+    },
+    {
+        "id": 588,
         "title": "Death Stranding",
         "description": "Отважьтесь преодолеть мир, трансформированный Петлей смерти. Держите в своих руках бессвязные остатки нашего будущего и отправляйтесь в дорогу, чтобы восстановить связь между осколками мира. В главных ролях: Норман Ридус, Мадс Миккельсен, Леа Сейду и Линдси Вагнер.",
         "thumbnail": "images/death_stranding/thumbnail.jpg",
