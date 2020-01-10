@@ -1704,6 +1704,19 @@
         "isChild": false
     },
     {
+        "id": 332,
+        "title": "Кровь и истина",
+        "description": "Наденьте гарнитуру PlayStation VR и станьте солдатом элитного спецподразделения по имени Райан Маркс в этом напряженном шутере с неудержимым экшеном и драматизмом уровня голливудских блокбастеров.",
+        "thumbnail": "images/blood_and_truth/thumbnail.jpg",
+        "image1": "images/blood_and_truth/1.jpg",
+        "image2": "images/blood_and_truth/2.jpg",
+        "image3": "images/blood_and_truth/3.jpg",
+        "video": "https://www.youtube.com/embed/1XgVb2w_82I",
+        "category": "psvr",
+        "genre": "экшн",
+        "isChild": true
+    },
+    {
         "id": 500,
         "title": "Grand Theft Auto V",
         "description": "Лос-Сантос – город ярких огней, долгих ночей и грязных секретов, в чем вы убедитесь с выходом обновления «Ночная жизнь» для GTA Online. Вечеринка начинается.",
