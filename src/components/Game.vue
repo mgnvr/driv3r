@@ -28,14 +28,12 @@
         </div>
       </div>
     </div>
-    <div class="breadcrumb-container">
-      <div class="container container-game">
+    <div class="container container-game">
+      <div class="breadcrumb-container">
         <router-link class="link-home" tag="a" to="/" title="Вернуться на главную">
           ❮ На главную
         </router-link>
       </div>
-    </div>
-    <div class="container container-game">
       <!--       <vk-breadcrumb>
         <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
         <vk-breadcrumb-item>{{ game.title }}</vk-breadcrumb-item>

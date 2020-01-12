@@ -28,14 +28,12 @@
         </div>
       </div>
     </div>
-    <div class="breadcrumb-container">
-      <div class="container container-game">
+    <div class="container container-contactus">
+      <div class="breadcrumb-container">
         <router-link class="link-home" tag="a" to="/" title="Вернуться на главную">
           ❮ На главную
         </router-link>
       </div>
-    </div>
-    <div class="container container-contactus">
       <h1 class="about-header">Забронируйте место</h1>
       <form action="https://send.pageclip.co/YR97n0GUKhRoDRB8QgxgjFgUXX86SOa5" method="post" class="form-reserve pageclip-form" autocomplete="off">
         <input type="text" name="Имя" value="" placeholder="Имя" class="input-reserve" title="" required>

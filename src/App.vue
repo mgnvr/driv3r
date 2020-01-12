@@ -546,9 +546,11 @@ a:hover,
 }
 
 .breadcrumb-container {
+  padding: 15px;
+  padding-left: 0;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 15px;
+
 /*  background: #1a0628;*/
 }
 

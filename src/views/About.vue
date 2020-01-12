@@ -28,8 +28,8 @@
         </div>
       </div>
     </div>
-    <div class="breadcrumb-container">
-      <div class="container container-game">
+    <div class="container container-about">
+      <div class="breadcrumb-container">
         <!--         <vk-breadcrumb>
           <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
           <vk-breadcrumb-item>О нас</vk-breadcrumb-item>
@@ -38,8 +38,6 @@
           ❮ На главную
         </router-link>
       </div>
-    </div>
-    <div class="container container-about">
       <h1 class="about-header">О нас</h1>
       <p>
         DriV3R - это то место, где Вы пересекаете грань реальности, оказываетесь в совершенно новых мирах и становитесь их частью, а не только наблюдателями. <br>
