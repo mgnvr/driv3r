@@ -546,8 +546,10 @@ a:hover,
 }
 
 .breadcrumb-container {
+  margin-top: 10px;
   margin-bottom: 20px;
-  background: #1a0628;
+  padding: 15px;
+/*  background: #1a0628;*/
 }
 
 .uk-breadcrumb {
@@ -579,6 +581,20 @@ a:hover,
 
 .uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
   margin: 0 10px !important;
+}
+
+.link-home {
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: #89253e;
+  transition: all .3s linear;
+}
+
+.link-home:hover {
+  background: #6e1e32;
+  transition: all .3s linear;
 }
 
 .desc {
@@ -847,6 +863,10 @@ a:hover,
   background: rgba(255,255,255,0.1);
 }
 
+.cell-rent {
+  text-align: center;
+}
+
 input[type=checkbox]:hover,
 label[for=isChild] {
   cursor: pointer;
@@ -976,7 +996,7 @@ label[for=isChild] {
 }
 
 .button-reserve {
-  padding: 15px;
+  padding: 10px;
   font-size: 14px;
   color: #fff;
   text-transform: uppercase;

@@ -30,10 +30,13 @@
     </div>
     <div class="breadcrumb-container">
       <div class="container container-game">
-        <vk-breadcrumb>
+        <!--         <vk-breadcrumb>
           <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
           <vk-breadcrumb-item>О нас</vk-breadcrumb-item>
-        </vk-breadcrumb>
+        </vk-breadcrumb> -->
+        <router-link class="link-home" tag="a" to="/" title="Вернуться на главную">
+          ❮ На главную
+        </router-link>
       </div>
     </div>
     <div class="container container-about">
@@ -75,13 +78,59 @@
         </div>
       </div>
       <h2>Прайс</h2>
-      <vk-table :data="data" striped>
+      <table class="uk-table uk-table-striped">
+        <thead>
+          <tr>
+            <th>HTC</th>
+            <th>PSVR</th>
+            <th>PS4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10 мин - 150₽</td>
+            <td>10 мин - 150₽</td>
+            <td>15 мин - 100₽</td>
+          </tr>
+          <tr>
+            <td>20 мин - 300₽</td>
+            <td>20 мин - 300₽</td>
+            <td>30 мин - 150₽</td>
+          </tr>
+          <tr>
+            <td>30 мин - 400₽</td>
+            <td>30 мин - 400₽</td>
+            <td>60 мин - 250₽</td>
+          </tr>
+          <tr>
+            <td>60 мин - 550₽</td>
+            <td>60 мин - 550₽</td>
+            <td>120 мин - 450₽</td>
+          </tr>
+          <tr>
+            <td>120 мин - 1000₽</td>
+            <td>120 мин - 1000₽</td>
+            <td>безлимит - 900₽</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>1 заезд - 120₽</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="cell-rent">
+              Аренда центра - 1500₽/час
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--       <vk-table :data="data" striped>
         <vk-table-column title="HTC" cell="htc"></vk-table-column>
         <vk-table-column title="PSVR" cell="psvr"></vk-table-column>
         <vk-table-column title="PS4" cell="ps4"></vk-table-column>
-      </vk-table>
+      </vk-table> -->
       <h2>Мы Вконтакте</h2>
-      <p>Конкурсы, акции, новости игровой индустрии в нашей группе ВКонтакте. Подпишись! :)</p>
+      <p>Конкурсы, акции, новости игровой индустрии в нашей группе ВКонтакте. Подпишись! 😉</p>
       <div id="vk_groups"></div>
       <h2>Как проехать</h2>
       <p>Мы находимся по адресу: г. Магнитогорск, ул. Ленина, 83 | ТЦ "Континент", 3 этаж, рядом с залом игровых автоматов Sky Game | тел. 8-9000-93-93-92</p>
