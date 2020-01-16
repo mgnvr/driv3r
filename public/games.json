@@ -2326,6 +2326,45 @@
         "category": "ps",
         "genre": "экшн",
         "isChild": false
+    },
+    {
+        "id": 590,
+        "title": "Uncharted: Натан Дрейк. Kоллекция",
+        "description": "История Натана Дрейка, которая началась в рыбацкой лодке у побережья Панамы, со временем стала синонимом слова «приключение». Uncharted: Drake’s Fortune, Uncharted 2: Among Thieves и «Uncharted 3: Иллюзии Дрейка» – три невероятно популярные игры впервые собраны вместе и обновлены для PS4. Это Uncharted: The Nathan Drake Collection.",
+        "thumbnail": "images/uncharted_collection/thumbnail.jpg",
+        "image1": "images/uncharted_collection/1.jpg",
+        "image2": "images/uncharted_collection/2.jpg",
+        "image3": "images/uncharted_collection/3.jpg",
+        "video": "https://www.youtube.com/embed/-mH2SVyBMAQ",
+        "category": "ps",
+        "genre": "экшн",
+        "isChild": false
+    },
+    {
+        "id": 591,
+        "title": "Goat Simulator",
+        "description": "Симулятор козла — это самая последняя технология симуляции козла, которая позволяет ВАМ воспользоваться симуляцией козла следующего поколения. Вам больше не придется воображать себя козлом, ваши мечты наконец-то осуществились!",
+        "thumbnail": "images/goat_simulator/thumbnail.jpg",
+        "image1": "images/goat_simulator/1.jpg",
+        "image2": "images/goat_simulator/2.jpg",
+        "image3": "images/goat_simulator/3.jpg",
+        "video": "https://www.youtube.com/embed/ZYbINugWKHA",
+        "category": "ps",
+        "genre": "симулятор",
+        "isChild": true
+    },
+    {
+        "id": 592,
+        "title": "Brawlhalla",
+        "description": "Выходите на арену вечных сражений и сразитесь с другими великими воинами в этом файтинговом платформере.",
+        "thumbnail": "images/brawlhalla/thumbnail.jpg",
+        "image1": "images/brawlhalla/1.jpg",
+        "image2": "images/brawlhalla/2.jpg",
+        "image3": "images/brawlhalla/3.jpg",
+        "video": "https://www.youtube.com/embed/baixpNzE9es",
+        "category": "ps",
+        "genre": "файтинг",
+        "isChild": true
     }
   ]
 }

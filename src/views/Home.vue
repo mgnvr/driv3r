@@ -109,7 +109,7 @@
                     <h3 v-text="game.title" class="game-title"></h3>
                     <p v-text="game.description" class="game-desc"></p>
                   </div>
-                  <img v-bind:src="game.thumbnail" class="card-image">
+                  <img v-bind:src="game.thumbnail" class="card-image" placeholder="https://unsplash.it/1920/1080?image=10">
                 </router-link>
               </div>
             </div>
@@ -158,7 +158,6 @@
                   <label class="label-genre" for="genre">Выбрать жанр</label>
                   <select v-model="genrePS4" id="genre" class="uk-select">
                     <option :selected="genrePS4 === 'все'" value="все">все</option>
-                    <option>шутер</option>
                     <option>экшн</option>
                     <option>ролевая</option>
                     <option>музыкальная</option>
@@ -167,7 +166,7 @@
                     <option>спорт</option>
                     <option>файтинг</option>
                     <option>песочница</option>
-                    <option>приключение</option>
+                    <option>симулятор</option>
                     <option>интерактивное кино</option>
                     <option>многопользовательская</option>
                   </select>

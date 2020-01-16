@@ -68,6 +68,7 @@
             <img :src="game.image3" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
           </div>
         </agile>
+
         <!-- <img :src="game.image" class="game-image" width="100%" height="auto"> -->
         <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
           <iframe class="embed-responsive-item game-video" :src="game.video" allowfullscreen width="100%"></iframe>
@@ -132,6 +133,12 @@ export default {
           important: true
         })
       }
+    },
+    next() {
+      this.$refs.flickity.next();
+    },
+    previous() {
+      this.$refs.flickity.previous();
     }
   },
   mounted() {
