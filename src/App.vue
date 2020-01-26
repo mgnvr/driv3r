@@ -888,6 +888,8 @@ label[for=isChild] {
 @supports (-webkit-appearance: none) {
   input[type="checkbox"] {
     -webkit-appearance: none;
+    position: relative;
+    top: 4px;
     width: 24px;
     height: 24px;
     margin: 0;
@@ -1116,89 +1118,6 @@ label[for=isChild] {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
-}
-
-.checkbox-is-child {
-  height: 0; width: 0;
-}
-
-.checkbox-is-child + label {
-  position: relative;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  margin: .6em 0;
-  -webkit-box-align: baseline;
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition: color 250ms cubic-bezier(.4,.0,.23,1);
-  -o-transition: color 250ms cubic-bezier(.4,.0,.23,1);
-  transition: color 250ms cubic-bezier(.4,.0,.23,1);
-}
-.checkbox-is-child + label > span {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-ordinal-group: 3;
-  -webkit-order: 2;
-      -ms-flex-order: 2;
-          order: 2;
-  margin-left: 10px;
-  width: 1em;
-  height: 1em;
-  background: transparent;
-  border: 3px solid #89253e;
-  cursor: pointer;
-  -webkit-transition: all 250ms cubic-bezier(.4,.0,.23,1);
-  -o-transition: all 250ms cubic-bezier(.4,.0,.23,1);
-  transition: all 250ms cubic-bezier(.4,.0,.23,1);
-}
-
-.checkbox-is-child + label:hover,
-.checkbox-is-child:focus + label{
-  color: #fff;
-}
-
-.checkbox-is-child + label:hover > span, 
-.checkbox-is-child:focus + label > span {
-  background: #1a0628;
-}
-
-.checkbox-is-child:checked + label > span {
-  border: .5em solid #89253e;
-  -webkit-animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
-          animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
-}
-
-.checkbox-is-child:checked + label > span:before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -8px;
-  border-right: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transform-origin: 0% 100%;
-      -ms-transform-origin: 0% 100%;
-          transform-origin: 0% 100%;
-  -webkit-animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
-          animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
 }
 
 .label-container {
