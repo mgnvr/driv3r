@@ -10,7 +10,8 @@ export default new Vuex.Store({
   namespaced: true,
   state: {
     games: [],
-    wishlistIds: []
+    wishlistIds: [],
+    backgrounds: []
   },
   plugins: [
     createPersistedState ()
@@ -56,7 +57,7 @@ export default new Vuex.Store({
           .toLowerCase()
           .includes(query.toString().toLowerCase()))
       })
-      } 
+      }
       else if (isChild) {
         return state.games.filter(game => {
           return (game.category === 'htc' && game.isChild &&
@@ -67,7 +68,7 @@ export default new Vuex.Store({
               .includes(query.toString().toLowerCase())
           );
         });
-      } 
+      }
       else {
         return state.games.filter(game => {
           return (game.category === 'htc' &&
@@ -80,14 +81,6 @@ export default new Vuex.Store({
         });
       }
     },
-    // showHTCGames: state => query => {
-    //   return state.games.filter(game => {
-    //     return (game.category === 'htc' && game.title
-    //       .toString()
-    //       .toLowerCase()
-    //       .includes(query.toString().toLowerCase()))
-    //   })
-    // },
     showPSVRGames: state => (query, genre, isChild) => {
       if (genre === 'все' && isChild) {
         return state.games.filter(game => {
@@ -103,7 +96,7 @@ export default new Vuex.Store({
           .toLowerCase()
           .includes(query.toString().toLowerCase()))
       })
-      } 
+      }
       else if (isChild) {
         return state.games.filter(game => {
           return (game.category === 'psvr' && game.isChild &&
@@ -114,7 +107,7 @@ export default new Vuex.Store({
               .includes(query.toString().toLowerCase())
           );
         });
-      } 
+      }
       else {
         return state.games.filter(game => {
           return (game.category === 'psvr' &&
@@ -127,22 +120,49 @@ export default new Vuex.Store({
         });
       }
     },
-    showPS4Games: state => (query, genre, isChild) => {
-      if (genre === 'все' && isChild) {
+    showPS4Games: state => (query, genre, isChild, isLocalMultiplayer) => {
+      if (genre === 'все' && isChild && isLocalMultiplayer) {
+        return state.games.filter(game => {
+          return (game.category === 'ps' && isChild && game.isLocalMultiplayer && game.title
+          .toString()
+          .toLowerCase()
+          .includes(query.toString().toLowerCase()))
+      })
+      }
+      else if (genre === 'все' && isChild) {
         return state.games.filter(game => {
           return (game.category === 'ps' && game.isChild && game.title
           .toString()
           .toLowerCase()
           .includes(query.toString().toLowerCase()))
       })
-      } else if (genre === 'все') {
+      }
+      else if (genre === 'все' && isLocalMultiplayer) {
+        return state.games.filter(game => {
+          return (game.category === 'ps' && game.isLocalMultiplayer && game.title
+          .toString()
+          .toLowerCase()
+          .includes(query.toString().toLowerCase()))
+      })
+      }
+      else if (genre === 'все') {
         return state.games.filter(game => {
           return (game.category === 'ps' && game.title
           .toString()
           .toLowerCase()
           .includes(query.toString().toLowerCase()))
       })
-      } 
+      }
+      else if (isChild && isLocalMultiplayer) {
+        return state.games.filter(game => {
+          return (game.category === 'ps' && isChild && game.isLocalMultiplayer &&
+            game.genre === genre &&
+            game.title
+              .toString()
+              .toLowerCase()
+              .includes(query.toString().toLowerCase()))
+        })
+      }
       else if (isChild) {
         return state.games.filter(game => {
           return (game.category === 'ps' && game.isChild &&
@@ -150,10 +170,19 @@ export default new Vuex.Store({
             game.title
               .toString()
               .toLowerCase()
-              .includes(query.toString().toLowerCase())
-          );
-        });
-      } 
+              .includes(query.toString().toLowerCase()))
+        })
+      }
+      else if (isLocalMultiplayer) {
+        return state.games.filter(game => {
+          return (game.category === 'ps' && game.isLocalMultiplayer &&
+            game.genre === genre &&
+            game.title
+              .toString()
+              .toLowerCase()
+              .includes(query.toString().toLowerCase()))
+        })
+      }
       else {
         return state.games.filter(game => {
           return (game.category === 'ps' &&
@@ -161,9 +190,8 @@ export default new Vuex.Store({
             game.title
               .toString()
               .toLowerCase()
-              .includes(query.toString().toLowerCase())
-          );
-        });
+              .includes(query.toString().toLowerCase()))
+        })
       }
     },
     showLikedGames: state => query => {
@@ -196,11 +224,22 @@ export default new Vuex.Store({
         .then(games => {
           commit('SET_GAMES', games)
         })
+    },
+    loadBackgrounds ({ commit }) {
+      axios
+        .get('backgrounds.json')
+        .then(r => r.data.backgrounds)
+        .then(backgrounds => {
+          commit('SET_BACKGROUNDS', backgrounds)
+        })
     }
   },
   mutations: {
     SET_GAMES (state, games) {
       state.games = games
+    },
+    SET_BACKGROUNDS (state, backgrounds) {
+      state.backgrounds = backgrounds
     },
     addGame (state, gameId) {
       if (!state.wishlistIds.includes(gameId)) {

@@ -1,0 +1,174 @@
+<template>
+  <div>
+    <div class="header header-not-home">
+      <div class="container container-header">
+        <div class="logo">
+          <router-link class="about-link" tag="a" to="/" title="На главную">
+            <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto" alt="DriV3R">
+          </router-link>
+        </div>
+        <div class="header-items">
+          <p class="header-item">
+            Мы находимся: г. Магнитогорск, ул. Ленина, 83 | ТЦ "Континент", 3 этаж
+          </p>
+          <p class="header-item">
+            Мы работаем: ежедневно с 10:00 до 21:00
+          </p>
+        </div>
+        <div class="header-info">
+          <div class="tel">
+            <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
+          </div>
+          <div class="social">
+            <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
+              <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
+            </a>
+          </div>
+          <router-link class="link" tag="a" to="/about" title="О нас">О нас</router-link>
+        </div>
+      </div>
+    </div>
+    <div class="container container-about">
+      <div class="breadcrumb-container">
+        <!--         <vk-breadcrumb>
+          <router-link class="home" tag="vk-breadcrumb-item" to="/" title="Вернуться на главную страницу">Главная</router-link>
+          <vk-breadcrumb-item>О нас</vk-breadcrumb-item>
+        </vk-breadcrumb> -->
+        <router-link class="link-home" tag="a" to="/" title="Вернуться на главную">
+          ❮ На главную
+        </router-link>
+      </div>
+      <h1>Услуга "Хромакей"</h1>
+      <h2 style="margin-top: 20px; font-size: 25px;">Забери впечатления с собой 📸</h2>
+
+      <div class="photo-algorithm">
+        <div class="algorithm-item">
+          <img :src="this.publicPath + 'choice.svg'" alt="" width="50px" height="50px">
+          <p>1. Выбери фон</p>
+        </div>
+        <div class="algorithm-item">
+          <img :src="this.publicPath + 'pose.svg'" alt="" width="50px" height="50px">
+          <p>2. Замри</p>
+        </div>
+        <div class="algorithm-item">
+          <img :src="this.publicPath + 'photo.svg'" alt="" width="50px" height="50px">
+          <p>3. Забери</p>
+        </div>
+      </div>
+
+      <div class="chromakey">
+        <div class="photo-mockup-container">
+          <div class="polaroid">
+            <div class="photo-mockup-wrapper">
+              <img class="photo-mockup" ref="photoMockup" :src="this.publicPath + 'backgrounds/new_york.jpg'">
+              <div class="polaroid-human">
+              </div>              
+            </div>
+            <div class="polaroid-desc"></div>
+          </div>
+        </div>
+
+        <div class="back-gallery">
+          <label class="label-genre" for="theme">Выбрать тему</label>
+        <select v-model="theme" class="uk-select" id="theme" @change="onChangeTheme($event)">
+          <option :selected="theme === 'все'" value="все">все</option>
+          <option>город</option>
+          <option>природа</option>
+          <option>фантастика</option>
+          <option>игра</option>
+        </select>
+
+        <vue-select-image :dataImages="dataImages" :useLabel=true @onselectimage="onSelectImage">
+        </vue-select-image>
+      </div>
+        </div>
+
+        
+        
+<!--       <div class="photo-gallery">
+        <div class="photo" v-for="(image, imageIndex) in images" :key="imageIndex" @click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')', height: '200px' }">
+        </div>
+      </div>
+      <gallery :images="images" :index="index" @close="index = null"></gallery> -->
+
+    </div>
+    <div class="footer">
+      <div class="container container-footer">
+        <div class="logo">
+          <router-link class="about-link" tag="a" to="/about" title="О нас">
+            <img :src="this.publicPath + 'footer.png'" alt="" width="200px" height="auto" alt="DriV3R">
+          </router-link>
+        </div>
+        <div class="tel">
+          <a href="tel: +79000939392" title="Позвонить нам">+7 (900) 093-93-92</a>
+        </div>
+        <div class="social">
+          <a href="https://vk.com/mgnvr" target="_blank" title="Мы ВКонтакте">
+            <img :src="this.publicPath + 'vk.svg'" alt="" width="30px" height="30px">
+          </a>
+        </div>
+        <div class="copyright">
+          &#9400; Driv3r, 2017 - 2020 | По всем вопросам обращаться по телефону или в группу ВКонтакте
+        </div>
+        <div class="developer">
+          Дизайн и разработка <a href="https://vk.com/primirenkov" target="_blank"><img :src="this.publicPath + 'ps.svg'" alt="Сергей Примиренков"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import VueGallery from 'vue-gallery'
+import VueSelectImage from 'vue-select-image'
+
+export default {
+  name: 'photo',
+  data() {
+    return {
+      backgrounds: [],
+      theme: 'все',
+      sitename: 'Driv3r - Каталог игр',
+      publicPath: process.env.BASE_URL,
+      dataImages: this.$store.state.backgrounds,
+      images: [
+        'chroma1.jpg'
+      ],
+      index: null
+    }
+  },
+  components: {
+    'gallery': VueGallery,
+    'vue-select-image': VueSelectImage
+  },
+  methods: {
+    onSelectImage: function(image) {
+      this.$refs.photoMockup.src = image.src
+    },
+    onChangeTheme(event) {
+      console.log(this.$store.state.backgrounds)
+      return this.$store.state.backgrounds.filter(back => {
+        return (back.theme === event.target.value
+        .toString()
+        .toLowerCase())
+      })
+      console.log(this.dataImages.length)
+    }
+  },
+  mounted() {
+    this.$store.dispatch('loadBackgrounds')
+  },
+//   computed: {
+//     onChangeTheme(event) {
+//       console.log(event.target.value)
+//     // return {
+//     //   this.$store.state.backgrounds.filter(back => {
+//     //     return (back.category === theme
+//     //     .toString()
+//     //     .toLowerCase())
+//     //   })
+//     // }
+//   }
+// }
+}
+
+</script>

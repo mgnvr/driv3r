@@ -1,0 +1,76 @@
+{
+    "backgrounds": [
+    {
+      "id": 1,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 2,
+      "src": "backgrounds/beach.webp",
+      "alt": "Пляж",
+      "theme": "природа"
+    },
+    {
+      "id": 3,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 4,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 5,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 6,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 7,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 8,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 9,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 10,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 11,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    },
+    {
+      "id": 12,
+      "src": "backgrounds/new_york.jpg",
+      "alt": "Нью-Йорк",
+      "theme": "город"
+    }
+  ]
+}

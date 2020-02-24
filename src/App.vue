@@ -218,7 +218,9 @@ input:focus {
   padding-top: 20px;
 }
 
-.item {
+.item,
+.photo,
+.vue-select-image__item {
   width: 100%;
   margin-bottom: 10px;
 }
@@ -299,6 +301,42 @@ p.game-desc {
      text-overflow: ellipsis;
   overflow: hidden;
 }
+
+.local-multiplayer,
+.game-local-multiplayer {
+  background: url("/driv3r/local_multiplayer2.svg");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+}
+
+.game-local-multiplayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.local-multiplayer {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+  padding-left: 50px;
+  background-position: left center;
+}
+
+/*.local-multiplayer::before {
+  display: block;
+  content: "*";
+  position: absolute;
+  top: 5px;
+  left: 40px;
+}*/
 
 ::-webkit-input-placeholder {
   color: #fff;
@@ -870,8 +908,17 @@ a:hover,
 }
 
 input[type=checkbox]:hover,
-label[for=isChild] {
+label[for=isChild],
+label[for=isLocalMultiplayer] {
   cursor: pointer;
+}
+
+.checkbox-items {
+  display: flex;
+}
+
+.select-item--child {
+  margin-right: 10px;
 }
 
 .select-item--checkbox {
@@ -1124,6 +1171,10 @@ label[for=isChild] {
   font-size: 15px;
 }
 
+.agile {
+  margin-top: 10px;
+}
+
 .agile__actions {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1276,6 +1327,143 @@ label[for=isChild] {
   top: 2px;  
 }
 
+.photo-algorithm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.algorithm-item {
+  position: relative;
+  width: 33.3333%;
+  height: 100px;
+  text-align: center;
+}
+
+.algorithm-item::after {
+  display: block;
+  content: "ᐳ";
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 30px;
+}
+
+.algorithm-item:last-child::after {
+  display: none;
+}
+
+.photo-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+.photo,
+.vue-select-image__item {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 5px;
+  transition: all .3s;
+}
+
+.photo:hover,
+.vue-select-image__item:hover {
+  cursor: pointer;
+/*  box-shadow: 0 0 10px #000;*/
+/*  transition: all .3s;*/
+}
+
+.chromakey {
+  padding-top: 20px;
+}
+
+.back-gallery {
+  flex-basis: 50%;
+}
+
+.vue-select-image__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  height: 310px;
+}
+
+.vue-select-image__img {
+/*  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;*/
+}
+
+.vue-select-image__item {
+  margin: 0 !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
+  background: transparent !important;
+/*  background: rgba(0,0,0,.7) !important;*/
+}
+
+.vue-select-image__thumbnail {
+  border: 1px solid #89253e !important;
+}
+
+.vue-select-image__thumbnail--selected {
+  background: #89253e !important;
+}
+
+.photo-mockup-container {
+  padding-bottom: 20px;
+  flex-basis: 50%;
+}
+
+.photo-mockup-wrapper {
+  position: relative;
+  border: 15px solid #fff;
+}
+
+.vue-select-image__lbl {
+  padding: 5px !important;
+}
+
+.polaroid {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.polaroid img {
+/*  border: 15px solid #fff;*/
+}
+
+.polaroid-desc {
+  height: 70px;
+  background: #fff;
+}
+
+.polaroid-human {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  background-image: url("/driv3r/woman.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  z-index: 100;
+}
+
+.chromakey {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 @-webkit-keyframes shrink-bounce {
   0% {
     -webkit-transform: scale(1);
@@ -1383,7 +1571,9 @@ label[for=isChild] {
     padding-left: 0;
   }
 
-  .item {
+  .item,
+  .photo,
+  .vue-select-image__item {
     width: calc(50% - 10px);
     margin-right: 10px;
   }
@@ -1397,11 +1587,13 @@ label[for=isChild] {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     -webkit-box-align: baseline;
     -webkit-align-items: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
     padding: 0;
+    padding-right: 20px;
   }
 
   .agile__actions {
@@ -1484,7 +1676,9 @@ label[for=isChild] {
 /*    padding-left: 0;*/
   }
 
-  .item {
+  .item,
+  .photo,
+  .vue-select-image__item {
     width: calc(33.3333% - 10px);
     margin-right: 10px;
   }
@@ -1554,7 +1748,9 @@ label[for=isChild] {
     max-width: 1200px !important;
   }
 
-  .item {
+  .item,
+  .photo,
+  .vue-select-image__item {
     width: calc(25% - 10px);
     margin-right: 10px;
   }

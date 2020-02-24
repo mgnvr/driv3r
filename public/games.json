@@ -1740,7 +1740,7 @@
         "video": "https://www.youtube.com/embed/1XgVb2w_82I",
         "category": "psvr",
         "genre": "экшн",
-        "isChild": true
+        "isChild": false
     },
     {
         "id": 500,
@@ -1961,7 +1961,8 @@
         "video": "https://www.youtube.com/embed/afqO1qGr2XM",
         "category": "ps",
         "genre": "аркада",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 557,
@@ -1974,7 +1975,8 @@
         "video": "https://www.youtube.com/embed/jMm09l1ws9o",
         "category": "ps",
         "genre": "аркада",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 558,
@@ -2013,7 +2015,8 @@
         "video": "https://www.youtube.com/embed/83OMunaBvqU",
         "category": "ps",
         "genre": "аркада",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 561,
@@ -2026,7 +2029,8 @@
         "video": "https://www.youtube.com/embed/bPpFdyEioGs",
         "category": "ps",
         "genre": "аркада",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 562,
@@ -2039,7 +2043,8 @@
         "video": "https://www.youtube.com/embed/hEO0YJ2mzFs",
         "category": "ps",
         "genre": "аркада",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 563,
@@ -2052,7 +2057,8 @@
         "video": "https://www.youtube.com/embed/CP2XoETz9gE",
         "category": "ps",
         "genre": "аркада",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 564,
@@ -2078,7 +2084,8 @@
         "video": "https://www.youtube.com/embed/Pc7QDU1aaB4",
         "category": "ps",
         "genre": "музыкальная",
-        "isChild": false
+        "isChild": false,
+        "isLocalMultiplayer": true
     },
     {
         "id": 568,
@@ -2169,7 +2176,8 @@
         "video": "https://www.youtube.com/embed/MHGwhPyxnTI",
         "category": "ps",
         "genre": "файтинг",
-        "isChild": false
+        "isChild": false,
+        "isLocalMultiplayer": true
     },
     {
         "id": 575,
@@ -2182,7 +2190,8 @@
         "video": "https://www.youtube.com/embed/n5OgeEu0qzw",
         "category": "ps",
         "genre": "спорт",
-        "isChild": false
+        "isChild": false,
+        "isLocalMultiplayer": true
     },
     {
         "id": 577,
@@ -2195,7 +2204,8 @@
         "video": "https://www.youtube.com/embed/zX0AV6yxyrQ",
         "category": "ps",
         "genre": "спорт",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 578,
@@ -2208,7 +2218,8 @@
         "video": "https://www.youtube.com/embed/rrSpkJhZSuU",
         "category": "ps",
         "genre": "спорт",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 579,
@@ -2221,7 +2232,8 @@
         "video": "https://www.youtube.com/embed/I45nYzzxWBI",
         "category": "ps",
         "genre": "спорт",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 580,
@@ -2234,7 +2246,8 @@
         "video": "https://www.youtube.com/embed/wV7Uv-ftCLQ",
         "category": "ps",
         "genre": "спорт",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 581,
@@ -2247,7 +2260,8 @@
         "video": "https://www.youtube.com/embed/iFPWdc3PMBk",
         "category": "ps",
         "genre": "спорт",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 582,
@@ -2286,7 +2300,8 @@
         "video": "https://www.youtube.com/embed/m97UWd2QuAI",
         "category": "ps",
         "genre": "спорт",
-        "isChild": false
+        "isChild": false,
+        "isLocalMultiplayer": true
     },
     {
         "id": 585,
@@ -2299,7 +2314,8 @@
         "video": "https://www.youtube.com/embed/FQUjlrEZglY",
         "category": "ps",
         "genre": "спорт",
-        "isChild": false
+        "isChild": false,
+        "isLocalMultiplayer": true
     },
     {
         "id": 586,
@@ -2312,7 +2328,8 @@
         "video": "https://www.youtube.com/embed/1V-_q3SKh5w",
         "category": "ps",
         "genre": "файтинг",
-        "isChild": false
+        "isChild": false,
+        "isLocalMultiplayer": true
     },
     {
         "id": 587,
@@ -2325,7 +2342,8 @@
         "video": "https://www.youtube.com/embed/g0b1Ho7Z3yY",
         "category": "ps",
         "genre": "файтинг",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     },
     {
         "id": 588,
@@ -2390,7 +2408,8 @@
         "video": "https://www.youtube.com/embed/baixpNzE9es",
         "category": "ps",
         "genre": "файтинг",
-        "isChild": true
+        "isChild": true,
+        "isLocalMultiplayer": true
     }
   ]
 }

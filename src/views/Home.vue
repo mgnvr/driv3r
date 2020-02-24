@@ -171,10 +171,19 @@
                     <option>многопользовательская</option>
                   </select>
                 </div>
+
+                <div class="checkbox-items"> 
+                  <div class="select-item select-item--child">
+                    <label for="isChild" class="label-genre">Для детей</label>
+                    <input v-model="isChild" type="checkbox" id="isChild">
+                  </div>
+
                 <div class="select-item">
-                  <label for="isChild" class="label-genre">Для детей</label>
-                  <input v-model="isChild" type="checkbox" id="isChild">
+                  <label for="isLocalMultiplayer" class="label-genre">На двоих</label>
+                  <input v-model="isLocalMultiplayer" type="checkbox" id="isLocalMultiplayer">
                 </div>
+              </div>
+
               </div>
             </div>
             <div class="wrapper container">
@@ -186,6 +195,7 @@
                     <p v-text="game.description" class="game-desc"></p>
                   </div>
                   <img v-bind:src="game.thumbnail" class="card-image">
+                  <div v-if="game.isLocalMultiplayer" class="game-local-multiplayer"></div>
                 </router-link>
               </div>
             </div>
@@ -251,7 +261,8 @@ export default {
       genreHTC: 'все',
       genrePS4: 'все',
       genrePSVR: 'все',
-      isChild: false
+      isChild: false,
+      isLocalMultiplayer: false
     }
   },
   methods: {
@@ -264,7 +275,7 @@ export default {
         this.isOpened = !this.isOpened
         this.isSwitched = !this.isSwitched
         this.$nextTick(function() {
-          this.$refs.searchGame.focus()
+        this.$refs.searchGame.focus()
         })
       }
     }
@@ -298,7 +309,7 @@ export default {
       return this.$store.getters.showPSVRGames(this.search, this.genrePSVR, this.isChild)
     },
     showGamesByPS4() {
-      return this.$store.getters.showPS4Games(this.search, this.genrePS4, this.isChild)
+      return this.$store.getters.showPS4Games(this.search, this.genrePS4, this.isChild, this.isLocalMultiplayer)
     },
     showLikedGames() {
       return this.$store.getters.wishlist(this.search)
