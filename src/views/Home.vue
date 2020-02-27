@@ -43,34 +43,6 @@
       </back-to-top>
       <div class="container container--tabs">
         <vk-tabs align="justify">
-          <!--           <vk-tabs-item title="ВСЕ">
-            <div class="container container-select">
-              <div class="select-container">
-                <label class="label-genre" for="genre">Выбрать жанр</label>
-                <select v-model="genre" id="genre" class="uk-select">
-                  <option :selected="genre === 'все'" value="все">все</option>
-                  <option>симулятор</option>
-                  <option>шутер</option>
-                  <option>экшн</option>
-                  <option>аркада</option>
-                  <option>гонка</option>
-                  <option>интерактивное кино</option>
-                </select>
-              </div>
-            </div>
-            <div class="wrapper container">
-      <div class="item" v-for="game in showGames" :key="game.id">
-        <router-link tag="div" :to="{ name : 'Id', params: {id: game.id}}" class="card">
-          <div class="card-genre" v-text="game.genre"></div>
-          <div class="card-desc">
-            <h3 v-text="game.title" class="game-title"></h3>
-            <p v-text="game.description" class="game-desc"></p>
-          </div>
-          <img v-bind:src="game.thumbnail" class="card-image">
-        </router-link>
-      </div>
-    </div>
-          </vk-tabs-item> -->
           <vk-tabs-item v-bind:title="'HTC ' + '(' + this.$store.state.games.filter(game => game.category==='htc').length + ')'">
             <div class="container container-select">
               <div class="select-container">

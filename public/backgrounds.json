@@ -8,69 +8,69 @@
     },
     {
       "id": 2,
+      "src": "backgrounds/paris.jpg",
+      "alt": "Париж",
+      "theme": "город"
+    },
+    {
+      "id": 3,
+      "src": "backgrounds/street.jpg",
+      "alt": "Улочка",
+      "theme": "город"
+    },
+    {
+      "id": 4,
       "src": "backgrounds/beach.webp",
       "alt": "Пляж",
       "theme": "природа"
     },
     {
-      "id": 3,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
-    },
-    {
-      "id": 4,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
-    },
-    {
       "id": 5,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
+      "src": "backgrounds/forest.jpg",
+      "alt": "Лес",
+      "theme": "природа"
     },
     {
       "id": 6,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
+      "src": "backgrounds/park.jpg",
+      "alt": "Парк",
+      "theme": "природа"
     },
     {
       "id": 7,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
+      "src": "backgrounds/clouds.jpg",
+      "alt": "Облака",
+      "theme": "природа"
     },
     {
       "id": 8,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
+      "src": "backgrounds/tree.jpg",
+      "alt": "Дерево",
+      "theme": "природа"
     },
     {
       "id": 9,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
+      "src": "backgrounds/tree.jpg",
+      "alt": "Дерево",
+      "theme": "природа"
     },
     {
       "id": 10,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
+      "src": "backgrounds/tree.jpg",
+      "alt": "Дерево",
+      "theme": "природа"
     },
     {
       "id": 11,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
+      "src": "backgrounds/tree.jpg",
+      "alt": "Дерево",
+      "theme": "природа"
     },
     {
       "id": 12,
-      "src": "backgrounds/new_york.jpg",
-      "alt": "Нью-Йорк",
-      "theme": "город"
+      "src": "backgrounds/tree.jpg",
+      "alt": "Дерево",
+      "theme": "природа"
     }
   ]
 }

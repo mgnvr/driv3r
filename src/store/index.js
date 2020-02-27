@@ -214,6 +214,23 @@ export default new Vuex.Store({
       return state.games.find(game => {
         return game.id === id
       })
+    },
+    showBackgrounds: state => theme => {
+      //if (genre === 'все' && isChild) {
+      //   return state.games.filter(game => {
+      //     return (game.category === 'htc' && game.isChild && game.title
+      //     .toString()
+      //     .toLowerCase()
+      //     .includes(query.toString().toLowerCase()))
+      // })
+      // }
+      if (theme === 'все') {
+        return state.backgrounds
+        } else {
+          return state.backgrounds.filter(back => {
+            return back.theme === theme
+        })
+      }
     }
   },
   actions: {

@@ -70,15 +70,13 @@
 
         <div class="back-gallery">
           <label class="label-genre" for="theme">Выбрать тему</label>
-        <select v-model="theme" class="uk-select" id="theme" @change="onChangeTheme($event)">
+        <select v-model="theme" class="uk-select" id="theme">
           <option :selected="theme === 'все'" value="все">все</option>
           <option>город</option>
           <option>природа</option>
-          <option>фантастика</option>
-          <option>игра</option>
         </select>
 
-        <vue-select-image :dataImages="dataImages" :useLabel=true @onselectimage="onSelectImage">
+        <vue-select-image :dataImages="changeTheme" :useLabel=true @onselectimage="onSelectImage">
         </vue-select-image>
       </div>
         </div>
@@ -129,7 +127,7 @@ export default {
       theme: 'все',
       sitename: 'Driv3r - Каталог игр',
       publicPath: process.env.BASE_URL,
-      dataImages: this.$store.state.backgrounds,
+      // dataImages: onChangeTheme(),
       images: [
         'chroma1.jpg'
       ],
@@ -143,32 +141,19 @@ export default {
   methods: {
     onSelectImage: function(image) {
       this.$refs.photoMockup.src = image.src
-    },
-    onChangeTheme(event) {
-      console.log(this.$store.state.backgrounds)
-      return this.$store.state.backgrounds.filter(back => {
-        return (back.theme === event.target.value
-        .toString()
-        .toLowerCase())
-      })
-      console.log(this.dataImages.length)
     }
+    // onChangeTheme() {
+    //   this.$store.getters.showBackgrounds(this.theme)
+    // }
   },
   mounted() {
     this.$store.dispatch('loadBackgrounds')
   },
-//   computed: {
-//     onChangeTheme(event) {
-//       console.log(event.target.value)
-//     // return {
-//     //   this.$store.state.backgrounds.filter(back => {
-//     //     return (back.category === theme
-//     //     .toString()
-//     //     .toLowerCase())
-//     //   })
-//     // }
-//   }
-// }
+  computed: {
+    changeTheme() {
+      return this.$store.getters.showBackgrounds(this.theme)
+    }
+  }
 }
 
 </script>
