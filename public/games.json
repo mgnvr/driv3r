@@ -2410,6 +2410,19 @@
         "genre": "файтинг",
         "isChild": true,
         "isLocalMultiplayer": true
+    },
+    {
+        "id": 593,
+        "title": "BioShock Infinite",
+        "description": "У бывшего пинкертоновского агента Букера ДеВитта есть только один шанс начать жизнь с чистого листа. Ему предстоит спасти Элизабет, таинственную девушку, которую с детства держат узницей в летающем городе Колумбия с самого детства. Вынужденные довериться друг другу, Букер и Элизабет понимают: только вместе им удастся совершить побег.",
+        "thumbnail": "images/bioshock_infinite/thumbnail.jpg",
+        "image1": "images/bioshock_infinite/1.jpg",
+        "image2": "images/bioshock_infinite/2.jpg",
+        "image3": "images/bioshock_infinite/3.jpg",
+        "video": "https://www.youtube.com/embed/EsJ55BzIvkE",
+        "category": "ps",
+        "genre": "экшн",
+        "isChild": false
     }
   ]
 }

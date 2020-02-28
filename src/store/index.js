@@ -216,14 +216,6 @@ export default new Vuex.Store({
       })
     },
     showBackgrounds: state => theme => {
-      //if (genre === 'все' && isChild) {
-      //   return state.games.filter(game => {
-      //     return (game.category === 'htc' && game.isChild && game.title
-      //     .toString()
-      //     .toLowerCase()
-      //     .includes(query.toString().toLowerCase()))
-      // })
-      // }
       if (theme === 'все') {
         return state.backgrounds
         } else {
