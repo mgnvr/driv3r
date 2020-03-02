@@ -1576,7 +1576,11 @@ label[for=isLocalMultiplayer] {
     padding-left: 0;
   }
 
-  .item,
+  .item {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+  }
+
   .photo {
     width: calc(55% - 10px);
     margin-right: 10px;

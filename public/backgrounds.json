@@ -47,30 +47,6 @@
       "src": "backgrounds/tree.jpg",
       "alt": "Дерево",
       "theme": "природа"
-    },
-    {
-      "id": 9,
-      "src": "backgrounds/tree.jpg",
-      "alt": "Дерево",
-      "theme": "природа"
-    },
-    {
-      "id": 10,
-      "src": "backgrounds/tree.jpg",
-      "alt": "Дерево",
-      "theme": "природа"
-    },
-    {
-      "id": 11,
-      "src": "backgrounds/tree.jpg",
-      "alt": "Дерево",
-      "theme": "природа"
-    },
-    {
-      "id": 12,
-      "src": "backgrounds/tree.jpg",
-      "alt": "Дерево",
-      "theme": "природа"
     }
   ]
 }
