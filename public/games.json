@@ -2437,6 +2437,19 @@
         "genre": "аркада",
         "isChild": true,
         "isLocalMultiplayer": true
+    },
+    {
+        "id": 595,
+        "title": "Sonic Forces",
+        "description": "Sonic Forces – новая игра про Соника, в которой вас ждет возможность создания собственного персонажа, мощнейшие гаджеты, безумный бег среди руин с Современным Соником и маневры на гибельных платформах с Классическим Соником. Погрузитесь в стремительный игровой процесс с тремя непохожими стилями, исследуйте классические уровни и сражайтесь в совершенно новых, играя за Шэдоу!",
+        "thumbnail": "images/sonic_forces/thumbnail.jpg",
+        "image1": "images/sonic_forces/1.jpg",
+        "image2": "images/sonic_forces/2.jpg",
+        "image3": "images/sonic_forces/3.jpg",
+        "video": "https://www.youtube.com/embed/1BYh9ytI8jg",
+        "category": "ps",
+        "genre": "аркада",
+        "isChild": true
     }
   ]
 }
