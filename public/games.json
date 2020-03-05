@@ -2423,6 +2423,20 @@
         "category": "ps",
         "genre": "экшн",
         "isChild": false
+    },
+    {
+        "id": 594,
+        "title": "Plants vs. Zombies: Битва за Нейборвиль",
+        "description": "Добро пожаловать в Нейборвиль, где жизнь идет своим чередом. Между безмозглыми и растениями назревает новый безумный конфликт! Что вы сделаете? Соберете урожай? Удобрите растения? Задайте жару на газоне в битве между растениями и зомби, в которой вам придется сражаться в самых дальних уголках Нейборвиля.",
+        "thumbnail": "images/plants_zombies_neighborville/thumbnail.jpg",
+        "image1": "images/plants_zombies_neighborville/1.jpg",
+        "image2": "images/plants_zombies_neighborville/2.jpg",
+        "image3": "images/plants_zombies_neighborville/3.jpg",
+        "video": "https://www.youtube.com/embed/RwYjx4VPzx0",
+        "category": "ps",
+        "genre": "аркада",
+        "isChild": true,
+        "isLocalMultiplayer": true
     }
   ]
 }
