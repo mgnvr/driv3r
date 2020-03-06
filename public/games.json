@@ -2450,6 +2450,19 @@
         "category": "ps",
         "genre": "аркада",
         "isChild": true
+    },
+    {
+        "id": 596,
+        "title": "Another World – 20th Anniversary Edition",
+        "description": "Лестер Чайкин попал в переплет. Из-за того, что опасный опыт вышел из-под контроля, юный ученый оказался в странном, враждебном и совершенно чуждом мире. Удастся ли Лестеру выжить и найти способ вернуться домой?",
+        "thumbnail": "images/another_world/thumbnail.jpg",
+        "image1": "images/another_world/1.jpg",
+        "image2": "images/another_world/2.jpg",
+        "image3": "images/another_world/3.jpg",
+        "video": "https://www.youtube.com/embed/DIPcQqepYlI",
+        "category": "ps",
+        "genre": "экшн",
+        "isChild": true
     }
   ]
 }
