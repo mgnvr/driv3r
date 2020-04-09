@@ -49,18 +49,7 @@
         <div v-if="game.isLocalMultiplayer" class="local-multiplayer"> 
           Доступен локальный мультиплеер (несколько игроков за одним телевизором)
         </div>
-          
-        <!--         <carousel :perPage="1" paginationActiveColor="#89253e" paginationColor="#ffffff" :minSwipeDistance="50">
-          <slide>
-            <img :src="game.image1" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
-          </slide>
-          <slide>
-            <img :src="game.image2" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
-          </slide>
-          <slide>
-            <img :src="game.image3" class="game-image" width="100%" height="auto" v-bind:alt="game.title">
-          </slide>
-        </carousel> -->
+        
         <agile :options="sliderOptions">
           <div class="slide">
             <img :src="game.image1" class="game-image" width="100%" height="auto" v-bind:alt="game.title">

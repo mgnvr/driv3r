@@ -40,7 +40,6 @@
       </div>
       <h1>Услуга "Хромакей"</h1>
       <h2 style="margin-top: 20px; font-size: 25px;">Забери впечатления с собой 📸</h2>
-
       <div class="photo-algorithm">
         <div class="algorithm-item">
           <img :src="this.publicPath + 'choice.svg'" alt="" width="50px" height="50px">
@@ -57,37 +56,28 @@
       </div>
 
       <div class="chromakey">
-        <div class="photo-mockup-container">
-          <div class="polaroid">
-            <div class="photo-mockup-wrapper">
-              <img class="photo-mockup" ref="photoMockup" :src="this.publicPath + 'backgrounds/new_york.jpg'">
-              <div class="polaroid-human">
-              </div>              
+        <div class="chromakey__polaroid">
+          <div ref="polaroid" class="chromakey__polaroid-back">
+            <div class="chromakey__polaroid-img">
+              <img ref="photoMockup" class="lolka" :src="this.publicPath + 'backgrounds/city/new_york.jpg'">
+              <div class="chromakey__polaroid-human"></div>
+              <div class="chromakey__polaroid-img-wrapper"></div>
             </div>
-            <div class="polaroid-desc"></div>
           </div>
         </div>
-
-        <div class="back-gallery">
-          <label class="label-genre" for="theme">Выбрать тему</label>
-        <select v-model="theme" class="uk-select" id="theme">
-          <option :selected="theme === 'все'" value="все">все</option>
-          <option>город</option>
-          <option>природа</option>
-        </select>
-
-        <vue-select-image :dataImages="changeTheme" :useLabel=true @onselectimage="onSelectImage">
-        </vue-select-image>
-      </div>
-        </div>
-
-        
-        
-<!--       <div class="photo-gallery">
-        <div class="photo" v-for="(image, imageIndex) in images" :key="imageIndex" @click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')', height: '200px' }">
+        <div class="chromakey__backgrounds">
+          <div class="chromakey__backgrounds-control">
+            <label class="label-genre" for="theme">Выбрать тему</label>
+            <select v-model="theme" class="uk-select" id="theme">
+              <option :selected="theme === 'все'" value="все">все</option>
+              <option>город</option>
+              <option>природа</option>
+            </select>
+          </div>
+          <vue-select-image :dataImages="changeTheme" :useLabel=true @onselectimage="onSelectImage">
+          </vue-select-image>
         </div>
       </div>
-      <gallery :images="images" :index="index" @close="index = null"></gallery> -->
 
     </div>
     <div class="footer">
@@ -116,7 +106,6 @@
   </div>
 </template>
 <script>
-import VueGallery from 'vue-gallery'
 import VueSelectImage from 'vue-select-image'
 
 export default {
@@ -127,32 +116,137 @@ export default {
       theme: 'все',
       sitename: 'Driv3r - Каталог игр',
       publicPath: process.env.BASE_URL,
-      // dataImages: onChangeTheme(),
-      images: [
-        'chroma1.jpg'
-      ],
-      index: null
+      index: null,
+      windowWidth: 0
     }
   },
   components: {
-    'gallery': VueGallery,
     'vue-select-image': VueSelectImage
   },
   methods: {
     onSelectImage: function(image) {
       this.$refs.photoMockup.src = image.src
+
+      var
+            fac = new FastAverageColor(),
+            container = document.querySelector('.chromakey__polaroid-img-wrapper'),
+            img = document.querySelector('.lolka')
+
+        fac.getColorAsync(img)
+            .then(function(color) {
+                container.style.backgroundColor = color.rgba
+            })
+            .catch(function(e) {
+                console.log(e)
+            });
+            console.log(container.style)
+    },
+    getWindowWidth(event) {
+      this.windowWidth = window.innerWidth
+
+      var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight;
+      var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
+      var actualWindowWidth = window.innerWidth
+
+      var imageWrapper = document.querySelector('.vue-select-image__wrapper')
+
+      if (this.windowWidth >= 768) {
+        imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
+      }
     }
-    // onChangeTheme() {
-    //   this.$store.getters.showBackgrounds(this.theme)
-    // }
   },
   mounted() {
     this.$store.dispatch('loadBackgrounds')
+
+    // var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight;
+    // var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight;
+    // var actualWindowWidth = window.innerWidth;
+
+    // var imageWrapper = document.querySelector('.vue-select-image__wrapper');
+
+    // if (this.windowWidth >= 768) {
+    //   imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px';
+    // }
+    // console.log(this.windowWidth)
+
+    
+
+    this.$nextTick(function() {
+      window.addEventListener('resize', this.getWindowWidth);
+
+      //Init
+      this.getWindowWidth()
+    })
+  },
+  beforeUpdate() {
+    var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight
+    var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
+    var actualWindowWidth = window.innerWidth
+
+    var imageWrapper = document.querySelector('.vue-select-image__wrapper')
+
+    $('.vue-select-image__wrapper').on('mousewheel DOMMouseScroll', function(e) {
+
+      var e0 = e.originalEvent;
+      var delta = e0.wheelDelta || -e0.detail;
+
+      this.scrollTop += (delta < 0 ? 1 : -1) * 30;
+      e.preventDefault();
+    })
+
+    // $('.vue-select-image__wrapper').on('touchmove', function(e) {
+    //   $('html, body').css({
+    //     overflow: 'hidden'
+    //   })
+    // })
+
+    // $('.chromakey__polaroid').on('touchmove', function(e) {
+    //   $('html, body').css({
+    //     overflow: 'auto'
+    //   });
+    // })
+
+    if (this.windowWidth >= 768) {
+      imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
+    }
+
+    imageWrapper.classList.add('scrollbar-rail');
+
+    $('.scrollbar-rail').scrollbar();
+
+    var
+            fac = new FastAverageColor(),
+            container = document.querySelector('.chromakey__polaroid-img-wrapper'),
+            img = document.querySelector('.lolka');
+
+        fac.getColorAsync(img)
+            .then(function(color) {
+                container.style.backgroundColor = color.rgba;
+            })
+            .catch(function(e) {
+                console.log(e);
+            });
+  },
+  updated() {
+    var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight
+    var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
+    var actualWindowWidth = window.innerWidth
+
+    var imageWrapper = document.querySelector('.vue-select-image__wrapper')
+
+    if (this.windowWidth >= 768) {
+      imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
+    }
+
+
   },
   computed: {
     changeTheme() {
       return this.$store.getters.showBackgrounds(this.theme)
     }
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.getWindowWidth)
   }
 }
 

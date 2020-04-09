@@ -24,6 +24,7 @@
     "vue-axios": "^2.1.4",
     "vue-backtotop": "^1.6.1",
     "vue-carousel": "^0.18.0",
+    "vue-custom-scrollbar": "^1.1.0",
     "vue-flash-message": "^0.7.2",
     "vue-gallery": "^2.0.1",
     "vue-loading-overlay": "^3.2.0",
