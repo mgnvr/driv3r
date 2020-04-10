@@ -1374,7 +1374,7 @@ label[for=isLocalMultiplayer] {
   right: 10px;
   width: 120px;
   height: 120px;
-  background: url("/driv3r/woman.png") center no-repeat;
+  background: url("/driv3r/woman2.png") center no-repeat;
   background-size: cover;
 }
 

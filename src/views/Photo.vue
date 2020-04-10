@@ -59,7 +59,7 @@
         <div class="chromakey__polaroid">
           <div ref="polaroid" class="chromakey__polaroid-back">
             <div class="chromakey__polaroid-img">
-              <img ref="photoMockup" class="lolka" :src="this.publicPath + 'backgrounds/city/new_york.jpg'">
+              <img ref="photoMockup" class="polaroid-photo" :src="this.publicPath + 'backgrounds/city/new_york.jpg'">
               <div class="chromakey__polaroid-human"></div>
               <div class="chromakey__polaroid-img-wrapper"></div>
             </div>
@@ -74,7 +74,7 @@
               <option>природа</option>
             </select>
           </div>
-          <vue-select-image :dataImages="changeTheme" :useLabel=true @onselectimage="onSelectImage">
+          <vue-select-image :dataImages="changeTheme" :selectedImages="selectedBacks" :useLabel=true @onselectimage="onSelectImage">
           </vue-select-image>
         </div>
       </div>
@@ -117,7 +117,10 @@ export default {
       sitename: 'Driv3r - Каталог игр',
       publicPath: process.env.BASE_URL,
       index: null,
-      windowWidth: 0
+      windowWidth: 0,
+      selectedBacks: [{
+        id: 1
+      }]
     }
   },
   components: {
@@ -130,7 +133,7 @@ export default {
       var
             fac = new FastAverageColor(),
             container = document.querySelector('.chromakey__polaroid-img-wrapper'),
-            img = document.querySelector('.lolka')
+            img = document.querySelector('.polaroid-photo')
 
         fac.getColorAsync(img)
             .then(function(color) {
@@ -139,7 +142,6 @@ export default {
             .catch(function(e) {
                 console.log(e)
             });
-            console.log(container.style)
     },
     getWindowWidth(event) {
       this.windowWidth = window.innerWidth
@@ -158,19 +160,6 @@ export default {
   mounted() {
     this.$store.dispatch('loadBackgrounds')
 
-    // var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight;
-    // var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight;
-    // var actualWindowWidth = window.innerWidth;
-
-    // var imageWrapper = document.querySelector('.vue-select-image__wrapper');
-
-    // if (this.windowWidth >= 768) {
-    //   imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px';
-    // }
-    // console.log(this.windowWidth)
-
-    
-
     this.$nextTick(function() {
       window.addEventListener('resize', this.getWindowWidth);
 
@@ -185,6 +174,8 @@ export default {
 
     var imageWrapper = document.querySelector('.vue-select-image__wrapper')
 
+    this.windowWidth = window.innerWidth
+
     $('.vue-select-image__wrapper').on('mousewheel DOMMouseScroll', function(e) {
 
       var e0 = e.originalEvent;
@@ -193,18 +184,6 @@ export default {
       this.scrollTop += (delta < 0 ? 1 : -1) * 30;
       e.preventDefault();
     })
-
-    // $('.vue-select-image__wrapper').on('touchmove', function(e) {
-    //   $('html, body').css({
-    //     overflow: 'hidden'
-    //   })
-    // })
-
-    // $('.chromakey__polaroid').on('touchmove', function(e) {
-    //   $('html, body').css({
-    //     overflow: 'auto'
-    //   });
-    // })
 
     if (this.windowWidth >= 768) {
       imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
@@ -217,7 +196,7 @@ export default {
     var
             fac = new FastAverageColor(),
             container = document.querySelector('.chromakey__polaroid-img-wrapper'),
-            img = document.querySelector('.lolka');
+            img = document.querySelector('.polaroid-photo');
 
         fac.getColorAsync(img)
             .then(function(color) {
