@@ -522,6 +522,19 @@ h3,
   font-size: 18px !important;
 }
 
+@media (max-width: 500px) {
+  h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 20px !important;
+    margin-top: 0 !important;
+  }
+}
+
 a:hover,
 .uk-link:hover {
   color: inherit !important;

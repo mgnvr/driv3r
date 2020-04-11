@@ -54,12 +54,11 @@
           <p>3. Забери</p>
         </div>
       </div>
-
       <div class="chromakey">
         <div class="chromakey__polaroid">
           <div ref="polaroid" class="chromakey__polaroid-back">
             <div class="chromakey__polaroid-img">
-              <img ref="photoMockup" class="polaroid-photo" :src="this.publicPath + 'backgrounds/city/new_york.jpg'">
+              <img ref="photoMockup" class="polaroid-photo" :src="changeTheme[0].src" @load="imageLoaded">
               <div class="chromakey__polaroid-human"></div>
               <div class="chromakey__polaroid-img-wrapper"></div>
             </div>
@@ -78,7 +77,6 @@
           </vue-select-image>
         </div>
       </div>
-
     </div>
     <div class="footer">
       <div class="container container-footer">
@@ -131,27 +129,53 @@ export default {
       this.$refs.photoMockup.src = image.src
 
       var
-            fac = new FastAverageColor(),
-            container = document.querySelector('.chromakey__polaroid-img-wrapper'),
-            img = document.querySelector('.polaroid-photo')
+        fac = new FastAverageColor(),
+        container = document.querySelector('.chromakey__polaroid-img-wrapper'),
+        img = document.querySelector('.polaroid-photo')
 
-        fac.getColorAsync(img)
-            .then(function(color) {
-                container.style.backgroundColor = color.rgba
-            })
-            .catch(function(e) {
-                console.log(e)
-            });
+      fac.getColorAsync(img)
+        .then(function(color) {
+          container.style.backgroundColor = color.rgba
+        })
+        .catch(function(e) {
+          console.log(e)
+        });
     },
     getWindowWidth(event) {
       this.windowWidth = window.innerWidth
 
-      var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight;
+      var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight
+      var imgPolaroid = document.querySelector('.polaroid-photo')
       var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
-      var actualWindowWidth = window.innerWidth
 
       var imageWrapper = document.querySelector('.vue-select-image__wrapper')
 
+      if (this.windowWidth >= 768) {
+        imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
+      }
+    },
+    // setWindowWidth() {
+    //   var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight;
+    //   var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
+
+    //   var imageWrapper = document.querySelector('.vue-select-image__wrapper')
+
+    //   this.windowWidth = window.innerWidth
+    //   console.log(this.windowWidth)
+
+    //   if (this.imageLoaded) {
+    //     if (this.windowWidth >= 768) {
+    //       imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
+    //     }
+    //   }
+    // },
+    imageLoaded() {
+      var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight
+      var imgPolaroid = document.querySelector('.polaroid-photo')
+      var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
+
+      var imageWrapper = document.querySelector('.vue-select-image__wrapper')
+      
       if (this.windowWidth >= 768) {
         imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
       }
@@ -160,64 +184,68 @@ export default {
   mounted() {
     this.$store.dispatch('loadBackgrounds')
 
+    // var imageWrapper = document.querySelector('.vue-select-image__wrapper')
+
+    $('.vue-select-image__wrapper').addClass('scrollbar-rail').on('mousewheel DOMMouseScroll', function(e) {
+
+      var e0 = e.originalEvent
+      var delta = e0.wheelDelta || -e0.detail
+
+      this.scrollTop += (delta < 0 ? 1 : -1) * 30
+      e.preventDefault()
+    })
+
+    // imageWrapper.classList.add('scrollbar-rail');
+
+    $('.scrollbar-rail').scrollbar()
+
     this.$nextTick(function() {
-      window.addEventListener('resize', this.getWindowWidth);
+      window.addEventListener('resize', this.getWindowWidth)
+
+      // this.setWindowWidth()
 
       //Init
       this.getWindowWidth()
     })
   },
   beforeUpdate() {
-    var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight
-    var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
-    var actualWindowWidth = window.innerWidth
+    // var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight
+    // var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
+    // var actualWindowWidth = window.innerWidth
 
-    var imageWrapper = document.querySelector('.vue-select-image__wrapper')
+    // var imageWrapper = document.querySelector('.vue-select-image__wrapper')
 
-    this.windowWidth = window.innerWidth
+    // this.windowWidth = window.innerWidth
 
-    $('.vue-select-image__wrapper').on('mousewheel DOMMouseScroll', function(e) {
+    //  if (this.windowWidth >= 768) {
+    //   imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
+    // }
 
-      var e0 = e.originalEvent;
-      var delta = e0.wheelDelta || -e0.detail;
+    // $('.vue-select-image__wrapper').on('mousewheel DOMMouseScroll', function(e) {
 
-      this.scrollTop += (delta < 0 ? 1 : -1) * 30;
-      e.preventDefault();
-    })
+    //   var e0 = e.originalEvent;
+    //   var delta = e0.wheelDelta || -e0.detail;
 
-    if (this.windowWidth >= 768) {
-      imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
-    }
+    //   this.scrollTop += (delta < 0 ? 1 : -1) * 30;
+    //   e.preventDefault();
+    // })
 
-    imageWrapper.classList.add('scrollbar-rail');
+    // imageWrapper.classList.add('scrollbar-rail');
 
-    $('.scrollbar-rail').scrollbar();
+    // $('.scrollbar-rail').scrollbar();
 
-    var
-            fac = new FastAverageColor(),
-            container = document.querySelector('.chromakey__polaroid-img-wrapper'),
-            img = document.querySelector('.polaroid-photo');
+    // var
+    //         fac = new FastAverageColor(),
+    //         container = document.querySelector('.chromakey__polaroid-img-wrapper'),
+    //         img = document.querySelector('.polaroid-photo');
 
-        fac.getColorAsync(img)
-            .then(function(color) {
-                container.style.backgroundColor = color.rgba;
-            })
-            .catch(function(e) {
-                console.log(e);
-            });
-  },
-  updated() {
-    var heightPolaroid = document.querySelector('.chromakey__polaroid').offsetHeight
-    var heightBackControl = document.querySelector('.chromakey__backgrounds-control').offsetHeight
-    var actualWindowWidth = window.innerWidth
-
-    var imageWrapper = document.querySelector('.vue-select-image__wrapper')
-
-    if (this.windowWidth >= 768) {
-      imageWrapper.style.height = (heightPolaroid - heightBackControl) + 'px'
-    }
-
-
+    //     fac.getColorAsync(img)
+    //         .then(function(color) {
+    //             container.style.backgroundColor = color.rgba;
+    //         })
+    //         .catch(function(e) {
+    //             console.log(e);
+    //         });
   },
   computed: {
     changeTheme() {
