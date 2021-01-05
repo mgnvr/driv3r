@@ -13,7 +13,7 @@
     "@chenfengyuan/vue-carousel": "^1.0.2",
     "@vuikit/icons": "^0.8.1",
     "@vuikit/theme": "^0.8.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "caret-pos": "^1.2.1",
     "core-js": "^2.6.5",
